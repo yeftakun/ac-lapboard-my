@@ -234,9 +234,15 @@ select:focus {
 }
 
 .filter-grid {
-  display: grid;
+  display: flex;
+  flex-wrap: wrap;
   gap: 0.85rem;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  align-items: flex-start;
+}
+
+.filter-input {
+  flex: 1 1 240px;
+  min-width: 220px;
 }
 
 .driver-meta {

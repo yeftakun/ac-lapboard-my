@@ -73,23 +73,21 @@ export default function LapTable({ rows = [] }) {
 
   return (
     <div className="space-y-6">
-      <div className="filter-grid" style={{ gridTemplateColumns: 'repeat(auto-fit,minmax(240px,1fr))' }}>
-        <label className="space-y-2 text-sm uppercase tracking-wide text-[var(--muted)]">
-          <span>Track</span>
-          <input
-            placeholder="Cari track"
-            value={filters.track}
-            onChange={(event) => setFilters((prev) => ({ ...prev, track: event.target.value }))}
-          />
-        </label>
-        <label className="space-y-2 text-sm uppercase tracking-wide text-[var(--muted)]">
-          <span>Car</span>
-          <input
-            placeholder="Cari mobil"
-            value={filters.car}
-            onChange={(event) => setFilters((prev) => ({ ...prev, car: event.target.value }))}
-          />
-        </label>
+      <div className="filter-grid">
+        <input
+          className="filter-input"
+          placeholder="Cari track"
+          aria-label="Cari track"
+          value={filters.track}
+          onChange={(event) => setFilters((prev) => ({ ...prev, track: event.target.value }))}
+        />
+        <input
+          className="filter-input"
+          placeholder="Cari mobil"
+          aria-label="Cari mobil"
+          value={filters.car}
+          onChange={(event) => setFilters((prev) => ({ ...prev, car: event.target.value }))}
+        />
       </div>
       <div className="flex flex-wrap items-center justify-between gap-3 text-sm text-[var(--muted)]">
         <span>
