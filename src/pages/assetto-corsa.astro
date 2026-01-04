@@ -7,9 +7,20 @@ import userConfig from '../data/config.json';
 const lapCount = laps.length;
 const trackCount = new Set(laps.map((lap) => lap.track)).size;
 const carCount = new Set(laps.map((lap) => lap.car)).size;
+const normalizeName = (value = '') =>
+  value
+    .replace(/^KS[_-]?/i, '')
+    .replace(/[_-]+/g, ' ')
+    .trim()
+    .toLowerCase();
+
 const featuredConfig = userConfig?.featuredLap ?? { show: false };
 const featuredLap = featuredConfig.show
-  ? laps.find((lap) => lap.track.toLowerCase() === featuredConfig.track?.toLowerCase() && lap.car.toLowerCase() === featuredConfig.car?.toLowerCase())
+  ? laps.find(
+      (lap) =>
+        normalizeName(lap.track) === normalizeName(featuredConfig.track ?? '') &&
+        normalizeName(lap.car) === normalizeName(featuredConfig.car ?? ''),
+    )
   : null;
 const lastDate = laps.reduce((latest, lap) => (latest > lap.date ? latest : lap.date), laps[0]?.date ?? null);
 const humanReadableLastDate = lastDate ? new Intl.DateTimeFormat('id-ID', { dateStyle: 'medium' }).format(new Date(lastDate)) : '—';
