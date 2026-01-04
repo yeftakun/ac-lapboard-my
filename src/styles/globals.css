@@ -140,6 +140,20 @@ code {
   border-color: var(--primary);
 }
 
+.button-link {
+  border: none;
+  background: none;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+.button-link:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
+}
+
 .table-wrapper {
   border: 1px solid var(--border);
   border-radius: 1.25rem;
@@ -275,4 +289,77 @@ select:focus {
 .driver-link:hover {
   border-color: var(--primary);
   color: var(--primary-hover);
+}
+
+.how-modal {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  z-index: 60;
+}
+
+.how-modal[hidden] {
+  display: none;
+}
+
+.how-modal__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(5, 7, 10, 0.65);
+  backdrop-filter: blur(6px);
+  z-index: 0;
+}
+
+.how-modal__panel {
+  position: relative;
+  width: min(480px, 100%);
+  border-radius: 1.5rem;
+  border: 1px solid var(--border);
+  background: color-mix(in srgb, var(--surface) 95%, transparent);
+  padding: 2rem;
+  box-shadow: 0 30px 80px color-mix(in srgb, var(--text) 12%, transparent);
+  z-index: 1;
+}
+
+.how-modal__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.modal-close {
+  border: none;
+  background: color-mix(in srgb, var(--surface) 90%, transparent);
+  color: var(--muted);
+  border-radius: 999px;
+  width: 2.25rem;
+  height: 2.25rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: color 160ms ease, background 160ms ease;
+}
+
+.modal-close:hover {
+  color: var(--text);
+  background: color-mix(in srgb, var(--surface) 70%, transparent);
+}
+
+.modal-steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+.modal-steps li {
+  line-height: 1.5;
 }

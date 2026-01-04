@@ -34,7 +34,7 @@ Lap time board mandiri yang mengadopsi struktur halaman `/assetto-corsa` dari pe
    - `npm run build` – menjalankan konversi **dan** build Astro untuk deploy GitHub Pages.
 3. Halaman `/assetto-corsa` meng-import `src/data/laptime.json` secara langsung, sehingga build output sudah menyertakan data terbaru tanpa fetch ekstra.
 4. Atur preferensi lewat `src/data/config.json`:
-   - `driverProfile` → nama driver, gear (gamepad/wheel-pedal/keyboard-mouse) + tautan profil.
+   - `driverProfile` → nama driver, gear (`gamepad`/`wheel-pedal`/`keyboard-mouse`) + tautan profil.
    - `featuredLap` → kontrol lap unggulan.
    - `meta` → judul, deskripsi, URL situs, dan OG image.
 

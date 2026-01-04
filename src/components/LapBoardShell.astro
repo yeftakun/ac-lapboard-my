@@ -110,28 +110,8 @@ const humanReadableLastDate = lastDate ? new Intl.DateTimeFormat('id-ID', { date
 </section>
 
 <section class="space-y-6">
-  <header class="space-y-2">
-    <div class="flex flex-wrap items-center gap-3 text-sm text-[var(--muted)]">
-      <span>Last updated: {humanReadableLastDate}</span>
-      <span>Source: <code>data/personalbest.ini</code></span>
-      <span>Config: <code>src/data/config.json</code></span>
-    </div>
-    <p class="text-sm text-[var(--muted)]">
-      Build script akan mengonversi personalbest.ini menjadi JSON sehingga bisa di-import langsung dalam halaman ini tanpa fetch runtime.
-    </p>
+  <header>
+    <p class="text-sm text-[var(--muted)]">Last updated: {humanReadableLastDate}</p>
   </header>
   <LapTable rows={laps} client:load />
-</section>
-
-<section class="card space-y-5">
-  <div class="flex flex-col gap-2">
-    <h2 class="text-2xl font-semibold">Pipeline singkat</h2>
-    <p class="text-sm text-[var(--muted)]">Alur yang mirip dengan referensi personal site.</p>
-  </div>
-  <ol class="space-y-3 text-sm text-[var(--muted)]">
-    <li>1. Salin <code>personalbest.ini</code> ke folder <code>data/</code>.</li>
-    <li>2. Jalankan <code>npm run build</code> atau <code>npm run laps:convert</code>.</li>
-    <li>3. Script <code>scripts/convert-personalbest.mjs</code> menghasilkan <code>src/data/laptime.json</code>.</li>
-    <li>4. Halaman ini meng-import JSON tersebut dan me-render tabel React.</li>
-  </ol>
 </section>

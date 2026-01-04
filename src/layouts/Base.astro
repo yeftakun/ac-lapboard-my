@@ -88,10 +88,32 @@ const ogType = Astro.props.ogType ?? 'website';
         <span>Built with Astro + React · Data from personalbest.ini</span>
         <div class="flex gap-4 text-xs uppercase tracking-wide">
           <a href="https://github.com/yeftakun/my-site" target="_blank" rel="noreferrer" class="hover:text-[var(--primary)]">Referensi</a>
-          <a href="https://assetto-db.com/" target="_blank" rel="noreferrer" class="hover:text-[var(--primary)]">Assetto DB</a>
+          <button type="button" data-how-it-works class="button-link hover:text-[var(--primary)]" aria-haspopup="dialog">
+            HOW IT WORKS
+          </button>
         </div>
       </div>
     </footer>
+
+    <div class="how-modal" data-how-modal hidden>
+      <div class="how-modal__overlay" data-modal-close aria-hidden="true"></div>
+      <div class="how-modal__panel" role="dialog" aria-modal="true" aria-labelledby="how-modal-title" tabindex="-1">
+        <div class="how-modal__header">
+          <div>
+            <p class="text-xs uppercase tracking-wide text-[var(--muted)]">How it works</p>
+            <h2 id="how-modal-title" class="text-2xl font-semibold">Pipeline singkat</h2>
+          </div>
+          <button type="button" class="modal-close" data-modal-close aria-label="Tutup modal">&times;</button>
+        </div>
+        <p class="text-sm text-[var(--muted)]">Alur yang mirip dengan referensi personal site.</p>
+        <ol class="modal-steps">
+          <li>1. Salin <code>personalbest.ini</code> ke folder <code>data/</code>.</li>
+          <li>2. Jalankan <code>npm run build</code> atau <code>npm run laps:convert</code>.</li>
+          <li>3. Script <code>scripts/convert-personalbest.mjs</code> menghasilkan <code>src/data/laptime.json</code>.</li>
+          <li>4. Halaman ini meng-import JSON tersebut dan me-render tabel React.</li>
+        </ol>
+      </div>
+    </div>
 
     <script is:inline>
       const toggles = document.querySelectorAll('[data-theme-toggle]');
@@ -102,6 +124,33 @@ const ogType = Astro.props.ogType ?? 'website';
           localStorage.setItem('theme', isDark ? 'dark' : 'light');
         });
       });
+
+      const modal = document.querySelector('[data-how-modal]');
+      const openers = document.querySelectorAll('[data-how-it-works]');
+      if (modal && openers.length) {
+        const dialog = modal.querySelector('[role="dialog"]');
+        const setModalState = (open) => {
+          modal.hidden = !open;
+          document.body.style.overflow = open ? 'hidden' : '';
+          if (open) {
+            dialog?.focus();
+          }
+        };
+
+        openers.forEach((button) => {
+          button.addEventListener('click', () => setModalState(true));
+        });
+
+        modal.querySelectorAll('[data-modal-close]').forEach((closer) => {
+          closer.addEventListener('click', () => setModalState(false));
+        });
+
+        document.addEventListener('keydown', (event) => {
+          if (event.key === 'Escape' && !modal.hidden) {
+            setModalState(false);
+          }
+        });
+      }
     </script>
   </body>
 </html>
