@@ -15,6 +15,7 @@ Lap time board mandiri yang mengadopsi struktur halaman `/assetto-corsa` dari pe
 │  │  └─ LapTable.jsx          # tabel interaktif (React)
 │  ├─ data/
 │  │  └─ laptime.json          # hasil konversi, di-import ke halaman
+│  │  └─ config.json           # preferensi (featured lap)
 │  ├─ layouts/
 │  │  └─ Base.astro            # layout + tema
 │  ├─ pages/
@@ -32,6 +33,7 @@ Lap time board mandiri yang mengadopsi struktur halaman `/assetto-corsa` dari pe
    - `npm run laps:convert` – hanya mengonversi INI ke JSON.
    - `npm run build` – menjalankan konversi **dan** build Astro untuk deploy GitHub Pages.
 3. Halaman `/assetto-corsa` meng-import `src/data/laptime.json` secara langsung, sehingga build output sudah menyertakan data terbaru tanpa fetch ekstra.
+4. Atur lap unggulan melalui `src/data/config.json` (`show`, `track`, `car`, `note`).
 
 ## Catatan Tambahan
 

@@ -35,11 +35,6 @@ export default function LapTable({ rows = [] }) {
     return map;
   }, [dataset]);
 
-  const uniqueTracks = useMemo(() => Array.from(new Set(dataset.map((row) => row.track))).sort(), [dataset]);
-  const uniqueCars = useMemo(() => Array.from(new Set(dataset.map((row) => row.car))).sort(), [dataset]);
-  const trackSelectValue = uniqueTracks.includes(filters.track) ? filters.track : '';
-  const carSelectValue = uniqueCars.includes(filters.car) ? filters.car : '';
-
   const filtered = useMemo(() => {
     const trackQuery = normalize(filters.track || '');
     const carQuery = normalize(filters.car || '');
@@ -78,7 +73,7 @@ export default function LapTable({ rows = [] }) {
 
   return (
     <div className="space-y-6">
-      <div className="filter-grid">
+      <div className="filter-grid" style={{ gridTemplateColumns: 'repeat(auto-fit,minmax(240px,1fr))' }}>
         <label className="space-y-2 text-sm uppercase tracking-wide text-[var(--muted)]">
           <span>Track</span>
           <input
@@ -94,28 +89,6 @@ export default function LapTable({ rows = [] }) {
             value={filters.car}
             onChange={(event) => setFilters((prev) => ({ ...prev, car: event.target.value }))}
           />
-        </label>
-        <label className="space-y-2 text-sm uppercase tracking-wide text-[var(--muted)]">
-          <span>Preset Track</span>
-          <select value={trackSelectValue} onChange={(event) => setFilters((prev) => ({ ...prev, track: event.target.value }))}>
-            <option value="">Semua track</option>
-            {uniqueTracks.map((track) => (
-              <option key={track} value={track}>
-                {track}
-              </option>
-            ))}
-          </select>
-        </label>
-        <label className="space-y-2 text-sm uppercase tracking-wide text-[var(--muted)]">
-          <span>Preset Car</span>
-          <select value={carSelectValue} onChange={(event) => setFilters((prev) => ({ ...prev, car: event.target.value }))}>
-            <option value="">Semua mobil</option>
-            {uniqueCars.map((car) => (
-              <option key={car} value={car}>
-                {car}
-              </option>
-            ))}
-          </select>
         </label>
       </div>
       <div className="flex flex-wrap items-center justify-between gap-3 text-sm text-[var(--muted)]">
@@ -143,13 +116,12 @@ export default function LapTable({ rows = [] }) {
                     {sortKey === field.key ? (sortDir === 'asc' ? ' ↑' : ' ↓') : ''}
                   </th>
                 ))}
-                <th>Notes</th>
               </tr>
             </thead>
             <tbody>
               {sorted.length === 0 ? (
                 <tr>
-                  <td colSpan={5} className="py-8 text-center text-sm text-[var(--muted)]">
+                  <td colSpan={4} className="py-8 text-center text-sm text-[var(--muted)]">
                     Tidak ada data yang cocok dengan filter.
                   </td>
                 </tr>
@@ -170,7 +142,6 @@ export default function LapTable({ rows = [] }) {
                         {isPb && <span className="badge-pb ml-3">PB</span>}
                       </td>
                       <td>{row.date}</td>
-                      <td className="text-xs text-[var(--muted)]">Hotlap</td>
                     </tr>
                   );
                 })
