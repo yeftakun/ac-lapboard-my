@@ -3,14 +3,25 @@ import LapTable from './LapTable.jsx';
 import laps from '../data/laptime.json';
 import userConfig from '../data/config.json';
 
+const driverProfile = userConfig?.driverProfile ?? null;
+const metaConfig = userConfig?.meta ?? {};
+
 const heroDefaults = {
-  title: 'Assetto Corsa Lap Time Board',
-  subtitle: 'Data otomatis dari personalbest.ini',
+  title: metaConfig.title ?? 'Assetto Corsa Lap Time Board',
+  subtitle: driverProfile?.name ? `${driverProfile.name} · Lap Archive` : 'Data otomatis dari personalbest.ini',
   description:
+    metaConfig.description ??
     'Tarik file personalbest.ini langsung dari folder Assetto Corsa, jalankan npm run build, dan tabel ini akan ter-update. Semua styling mengikuti tema personal site sebagai referensi.',
 };
 
 const hero = { ...heroDefaults, ...(Astro.props.hero ?? {}) };
+const gearLabels = {
+  'wheel-pedal': 'Wheel & Pedal',
+  gamepad: 'Gamepad',
+  'keyboard-mouse': 'Keyboard & Mouse',
+};
+const gearKey = driverProfile?.gear?.toLowerCase();
+const gearLabel = gearKey ? gearLabels[gearKey] ?? driverProfile?.gear : null;
 
 const lapCount = laps.length;
 const trackCount = new Set(laps.map((lap) => lap.track)).size;
@@ -41,6 +52,27 @@ const humanReadableLastDate = lastDate ? new Intl.DateTimeFormat('id-ID', { date
     <h1 class="text-4xl font-semibold leading-tight">{hero.title}</h1>
     <p class="text-sm uppercase tracking-wide text-[var(--muted)]">{hero.subtitle}</p>
     <p class="max-w-2xl text-lg text-[var(--muted)]">{hero.description}</p>
+    {driverProfile && (
+      <div class="profile-card card">
+        <div class="space-y-1">
+          <p class="text-xs uppercase tracking-wide text-[var(--muted)]">Driver</p>
+          <p class="text-xl font-semibold">{driverProfile.name}</p>
+        </div>
+        {gearLabel && (
+          <span class="gear-badge" data-gear={gearKey}>{gearLabel}</span>
+        )}
+        {driverProfile.featuredLink?.url && (
+          <a
+            href={driverProfile.featuredLink.url}
+            target="_blank"
+            rel="noreferrer"
+            class="btn btn-ghost text-xs"
+          >
+            {driverProfile.featuredLink.label ?? 'Profile'}
+          </a>
+        )}
+      </div>
+    )}
   </div>
   <div class="stat-grid">
     <div class="stat-card">

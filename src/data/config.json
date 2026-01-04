@@ -1,8 +1,22 @@
 {
+  "driverProfile": {
+    "name": "Yef",
+    "gear": "wheel-pedal",
+    "featuredLink": {
+      "label": "Steam",
+      "url": "https://steamcommunity.com/id/shironeko64"
+    }
+  },
   "featuredLap": {
     "show": false,
     "track": "KS_NORDSCHLEIFE-NORDSCHLEIFE",
     "car": "KS_MCLAREN_650_GT3",
     "note": "Keknya ini lap gt3 terbaik gw dah..."
+  },
+  "meta": {
+    "title": "Assetto Corsa Lap Board",
+    "description": "Generated from personalbest.ini and rendered with Astro.",
+    "siteUrl": "https://example.com",
+    "image": "/og-image.png"
   }
 }

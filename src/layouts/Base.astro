@@ -1,15 +1,37 @@
 ---
 import '../styles/globals.css';
 import iconUrl from '../icons/icon.png';
+import userConfig from '../data/config.json';
 
 const logoIcon = typeof iconUrl === 'string' ? iconUrl : iconUrl.src;
-const defaultTitle = 'Assetto Corsa Lap Board';
-const defaultDescription = 'Lap time board generated from personalbest.ini and rendered with Astro.';
-const siteUrl = Astro.site?.href ?? 'https://example.com';
+const metaConfig = userConfig?.meta ?? {};
+const fallbackSite = Astro.site?.href ?? 'https://example.com';
+
+const siteUrl = (() => {
+  const candidate = metaConfig.siteUrl ?? fallbackSite;
+  try {
+    return new URL(candidate).href;
+  } catch {
+    return fallbackSite;
+  }
+})();
+
+const toAbsoluteUrl = (value, base) => {
+  if (!value) return new URL('/images/preview.png', base).href;
+  try {
+    return new URL(value, base).href;
+  } catch {
+    return value;
+  }
+};
+
+const defaultTitle = metaConfig.title ?? 'Assetto Corsa Lap Board';
+const defaultDescription = metaConfig.description ?? 'Lap time board generated from personalbest.ini and rendered with Astro.';
+const defaultOgImage = toAbsoluteUrl(metaConfig.image ?? '/images/preview.png', siteUrl);
 const urlPath = Astro.url?.pathname ?? '/';
 const title = Astro.props.title ?? defaultTitle;
 const description = Astro.props.description ?? defaultDescription;
-const image = Astro.props.image ?? `${siteUrl}/images/preview.png`;
+const image = Astro.props.image ?? defaultOgImage;
 const imageAlt = Astro.props.imageAlt ?? 'Lap time preview';
 const ogType = Astro.props.ogType ?? 'website';
 ---

@@ -19,8 +19,8 @@ Lap time board mandiri yang mengadopsi struktur halaman `/assetto-corsa` dari pe
 │  ├─ layouts/
 │  │  └─ Base.astro            # layout + tema
 │  ├─ pages/
-│  │  ├─ index.astro           # redirect ramah
-│  │  └─ assetto-corsa.astro   # halaman utama lap board
+│  │  ├─ index.astro           # halaman utama lap board
+│  │  └─ assetto-corsa.astro   # alias opsional (konten sama)
 │  └─ styles/
 │     └─ globals.css           # Tailwind + CSS variables (tema sama)
 ```
@@ -33,7 +33,10 @@ Lap time board mandiri yang mengadopsi struktur halaman `/assetto-corsa` dari pe
    - `npm run laps:convert` – hanya mengonversi INI ke JSON.
    - `npm run build` – menjalankan konversi **dan** build Astro untuk deploy GitHub Pages.
 3. Halaman `/assetto-corsa` meng-import `src/data/laptime.json` secara langsung, sehingga build output sudah menyertakan data terbaru tanpa fetch ekstra.
-4. Atur lap unggulan melalui `src/data/config.json` (`show`, `track`, `car`, `note`).
+4. Atur preferensi lewat `src/data/config.json`:
+   - `driverProfile` → nama driver, gear (gamepad/wheel-pedal/keyboard-mouse) + tautan profil.
+   - `featuredLap` → kontrol lap unggulan.
+   - `meta` → judul, deskripsi, URL situs, dan OG image.
 
 ## Catatan Tambahan
 
