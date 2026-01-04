@@ -1,6 +1,8 @@
 ---
 import '../styles/globals.css';
+import iconUrl from '../icons/icon.png';
 
+const logoIcon = typeof iconUrl === 'string' ? iconUrl : iconUrl.src;
 const defaultTitle = 'Assetto Corsa Lap Board';
 const defaultDescription = 'Lap time board generated from personalbest.ini and rendered with Astro.';
 const siteUrl = Astro.site?.href ?? 'https://example.com';
@@ -40,7 +42,9 @@ const ogType = Astro.props.ogType ?? 'website';
     <header class="sticky top-0 z-40 border-b border-[var(--border)] bg-[color-mix(in_srgb,var(--bg)_85%,transparent)] backdrop-blur">
       <div class="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
         <a href="/" class="flex items-center gap-3 font-semibold">
-          <span class="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-[var(--primary)] text-white text-lg">AC</span>
+          <span class="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-[var(--surface)]">
+            <img src={logoIcon} alt="Lap Board icon" class="h-8 w-8" loading="lazy" decoding="async" />
+          </span>
           <div class="text-sm text-[var(--muted)] leading-tight">
             <span class="block text-[var(--text)] font-semibold">Lap Board</span>
             <span>Assetto Corsa</span>
