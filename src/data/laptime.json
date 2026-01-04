@@ -1,0 +1,23 @@
+[
+  {
+    "car": "Ferrari 488 GT3",
+    "track": "SPA",
+    "date": "2024-01-18",
+    "laptime_ms": 145876,
+    "laptime_display": "2:25.876"
+  },
+  {
+    "car": "Porsche 911 GT3 CUP",
+    "track": "Vallelunga",
+    "date": "2024-01-13",
+    "laptime_ms": 108342,
+    "laptime_display": "1:48.342"
+  },
+  {
+    "car": "Lamborghini Huracan GT3",
+    "track": "Nordschleife",
+    "date": "2023-12-30",
+    "laptime_ms": 492345,
+    "laptime_display": "8:12.345"
+  }
+]

@@ -1,0 +1,82 @@
+---
+import BaseLayout from '../layouts/Base.astro';
+import LapTable from '../components/LapTable.jsx';
+import laps from '../data/laptime.json';
+
+const lapCount = laps.length;
+const trackCount = new Set(laps.map((lap) => lap.track)).size;
+const carCount = new Set(laps.map((lap) => lap.car)).size;
+const fastestLap = laps.reduce((best, lap) => {
+  if (!best) return lap;
+  return lap.laptime_ms < best.laptime_ms ? lap : best;
+}, null);
+const lastDate = laps.reduce((latest, lap) => (latest > lap.date ? latest : lap.date), laps[0]?.date ?? null);
+const humanReadableLastDate = lastDate ? new Intl.DateTimeFormat('id-ID', { dateStyle: 'medium' }).format(new Date(lastDate)) : '—';
+
+const hero = {
+  title: 'Assetto Corsa Lap Time Board',
+  subtitle: 'Data otomatis dari personalbest.ini',
+  description:
+    'Tarik file personalbest.ini langsung dari folder Assetto Corsa, jalankan npm run build, dan tabel ini akan ter-update. Semua styling mengikuti tema personal site sebagai referensi.',
+};
+---
+<BaseLayout title="Assetto Corsa | Lap Time Board" description="Hotlap recap yang diekstrak dari personalbest.ini dengan build Astro.">
+  <section class="space-y-6">
+    <div class="space-y-3">
+      <span class="chip">Lap Archive</span>
+      <h1 class="text-4xl font-semibold leading-tight">{hero.title}</h1>
+      <p class="text-sm uppercase tracking-wide text-[var(--muted)]">{hero.subtitle}</p>
+      <p class="max-w-2xl text-lg text-[var(--muted)]">{hero.description}</p>
+    </div>
+    <div class="stat-grid">
+      <div class="stat-card">
+        <p class="text-sm text-[var(--muted)] uppercase tracking-wide">Total Laps</p>
+        <p class="stat-value">{lapCount}</p>
+        <p class="text-xs text-[var(--muted)]">Diambil dari personalbest.ini</p>
+      </div>
+      <div class="stat-card">
+        <p class="text-sm text-[var(--muted)] uppercase tracking-wide">Tracks</p>
+        <p class="stat-value">{trackCount}</p>
+        <p class="text-xs text-[var(--muted)]">Varian sirkuit yang tercatat</p>
+      </div>
+      <div class="stat-card">
+        <p class="text-sm text-[var(--muted)] uppercase tracking-wide">Cars</p>
+        <p class="stat-value">{carCount}</p>
+        <p class="text-xs text-[var(--muted)]">Mobil berbeda</p>
+      </div>
+      {fastestLap && (
+        <div class="stat-card">
+          <p class="text-sm text-[var(--muted)] uppercase tracking-wide">Fastest Lap</p>
+          <p class="stat-value text-[var(--success)]">{fastestLap.laptime_display}</p>
+          <p class="text-xs text-[var(--muted)]">{fastestLap.track} · {fastestLap.car}</p>
+        </div>
+      )}
+    </div>
+  </section>
+
+  <section class="space-y-6">
+    <header class="space-y-2">
+      <div class="flex flex-wrap items-center gap-3 text-sm text-[var(--muted)]">
+        <span>Last updated: {humanReadableLastDate}</span>
+        <span>Source: <code>data/personalbest.ini</code></span>
+      </div>
+      <p class="text-sm text-[var(--muted)]">
+        Build script akan mengonversi personalbest.ini menjadi JSON sehingga bisa di-import langsung dalam halaman ini tanpa fetch runtime.
+      </p>
+    </header>
+    <LapTable rows={laps} client:load />
+  </section>
+
+  <section class="card space-y-5">
+    <div class="flex flex-col gap-2">
+      <h2 class="text-2xl font-semibold">Pipeline singkat</h2>
+      <p class="text-sm text-[var(--muted)]">Alur yang mirip dengan referensi personal site.</p>
+    </div>
+    <ol class="space-y-3 text-sm text-[var(--muted)]">
+      <li>1. Salin <code>personalbest.ini</code> ke folder <code>data/</code>.</li>
+      <li>2. Jalankan <code>npm run build</code> atau <code>npm run laps:convert</code>.</li>
+      <li>3. Script <code>scripts/convert-personalbest.mjs</code> menghasilkan <code>src/data/laptime.json</code>.</li>
+      <li>4. Halaman ini meng-import JSON tersebut dan me-render tabel React.</li>
+    </ol>
+  </section>
+</BaseLayout>
