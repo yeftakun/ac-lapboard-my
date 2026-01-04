@@ -8,7 +8,6 @@ const metaConfig = userConfig?.meta ?? {};
 
 const heroDefaults = {
   title: metaConfig.title ?? 'Assetto Corsa Lap Time Board',
-  subtitle: driverProfile?.name ? `${driverProfile.name} · Lap Archive` : 'Data otomatis dari personalbest.ini',
   description:
     metaConfig.description ??
     'Tarik file personalbest.ini langsung dari folder Assetto Corsa, jalankan npm run build, dan tabel ini akan ter-update. Semua styling mengikuti tema personal site sebagai referensi.',
@@ -48,9 +47,7 @@ const humanReadableLastDate = lastDate ? new Intl.DateTimeFormat('id-ID', { date
 ---
 <section class="space-y-6">
   <div class="space-y-4">
-    <span class="chip">Lap Archive</span>
     <h1 class="text-4xl font-semibold leading-tight">{hero.title}</h1>
-    <p class="text-sm uppercase tracking-wide text-[var(--muted)]">{hero.subtitle}</p>
     <p class="max-w-2xl text-lg text-[var(--muted)]">{hero.description}</p>
     {driverProfile && (
       <div class="driver-meta">

@@ -1,6 +1,6 @@
 {
   "driverProfile": {
-    "name": "Yef",
+    "name": "Yefta Asyel",
     "gear": "gamepad",
     "featuredLink": {
       "label": "Steam",
@@ -14,8 +14,8 @@
     "note": "Keknya ini lap gt3 terbaik gw dah..."
   },
   "meta": {
-    "title": "Assetto Corsa Lap Board",
-    "description": "Generated from personalbest.ini and rendered with Astro.",
+    "title": "Lap Board",
+    "description": "My personal best lap times in Assetto Corsa.",
     "siteUrl": "https://example.com",
     "image": "/og-image.png"
   }
