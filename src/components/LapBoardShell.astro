@@ -47,30 +47,32 @@ const lastDate = laps.reduce((latest, lap) => (latest > lap.date ? latest : lap.
 const humanReadableLastDate = lastDate ? new Intl.DateTimeFormat('id-ID', { dateStyle: 'medium' }).format(new Date(lastDate)) : '—';
 ---
 <section class="space-y-6">
-  <div class="space-y-3">
+  <div class="space-y-4">
     <span class="chip">Lap Archive</span>
     <h1 class="text-4xl font-semibold leading-tight">{hero.title}</h1>
     <p class="text-sm uppercase tracking-wide text-[var(--muted)]">{hero.subtitle}</p>
     <p class="max-w-2xl text-lg text-[var(--muted)]">{hero.description}</p>
     {driverProfile && (
-      <div class="profile-card card">
-        <div class="space-y-1">
+      <div class="driver-meta">
+        <div>
           <p class="text-xs uppercase tracking-wide text-[var(--muted)]">Driver</p>
-          <p class="text-xl font-semibold">{driverProfile.name}</p>
+          <p class="text-lg font-semibold">{driverProfile.name}</p>
         </div>
-        {gearLabel && (
-          <span class="gear-badge" data-gear={gearKey}>{gearLabel}</span>
-        )}
-        {driverProfile.featuredLink?.url && (
-          <a
-            href={driverProfile.featuredLink.url}
-            target="_blank"
-            rel="noreferrer"
-            class="btn btn-ghost text-xs"
-          >
-            {driverProfile.featuredLink.label ?? 'Profile'}
-          </a>
-        )}
+        <div class="driver-meta__chips">
+          {gearLabel && (
+            <span class="gear-badge" data-gear={gearKey}>{gearLabel}</span>
+          )}
+          {driverProfile.featuredLink?.url && (
+            <a
+              href={driverProfile.featuredLink.url}
+              target="_blank"
+              rel="noreferrer"
+              class="driver-link"
+            >
+              <span>{driverProfile.featuredLink.label ?? 'Profile'}</span>
+            </a>
+          )}
+        </div>
       </div>
     )}
   </div>

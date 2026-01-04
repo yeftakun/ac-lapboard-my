@@ -225,15 +225,25 @@ select:focus {
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
 
-.profile-card {
+.driver-meta {
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
+  justify-content: space-between;
   gap: 1rem;
-  padding: 1.25rem 1.5rem;
+  flex-wrap: wrap;
+  padding-top: 1rem;
+  border-top: 1px solid color-mix(in srgb, var(--border) 80%, transparent);
 }
 
-.gear-badge {
+.driver-meta__chips {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.gear-badge,
+.driver-link {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
@@ -254,4 +264,15 @@ select:focus {
 .gear-badge[data-gear='keyboard-mouse'] {
   background: color-mix(in srgb, var(--muted) 15%, transparent);
   color: var(--muted);
+}
+
+.driver-link {
+  border: 1px solid color-mix(in srgb, var(--primary) 20%, transparent);
+  text-decoration: none;
+  transition: border-color 160ms ease, color 160ms ease;
+}
+
+.driver-link:hover {
+  border-color: var(--primary);
+  color: var(--primary-hover);
 }
