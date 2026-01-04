@@ -43,3 +43,14 @@ Lap time board mandiri yang mengadopsi struktur halaman `/assetto-corsa` dari pe
 - Layout dan warna mengikuti tema personal site: kombinasi light (cobalt) dan dark (graphite + racing red).
 - Komponen tabel mendukung filter, preset dropdown, sorting, dan highlight PB per track.
 - Feel free untuk mengganti font/warna sesuai branding lain; cukup update `src/styles/globals.css`.
+
+## Deploy ke GitHub Pages
+
+Workflow GitHub Actions [`deploy.yml`](.github/workflows/deploy.yml) otomatis membangun dan mem-publish ke GitHub Pages ketika branch `main` diperbarui. Yang perlu dipersiapkan:
+
+1. Pastikan `data/personalbest.ini` dan `src/data/config.json` ikut di-commit agar langkah konversi di CI memiliki sumber data.
+2. Jalankan `npm run build` secara lokal sebelum push untuk memastikan konversi dan build sukses.
+3. Setelah push pertama, buka **Settings → Pages** pada repo dan pilih sumber **GitHub Actions**.
+4. (Opsional) Jika memakai custom domain atau ingin menimpa URL yang dihitung otomatis, set repository variable `SITE_URL` ke alamat penuh (mis. `https://fastlaps.example.com/`).
+
+Konfigurasi `astro.config.mjs` akan men-set `site` dan `base` otomatis berdasarkan repo GitHub sehingga output sudah sesuai path GitHub Pages (`https://username.github.io/<repo>/`). Tidak ada konfigurasi tambahan yang dibutuhkan di luar langkah di atas.
