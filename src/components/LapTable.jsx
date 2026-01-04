@@ -137,7 +137,11 @@ export default function LapTable({ rows = [] }) {
                       <td>{row.car}</td>
                       <td className="tabular-nums text-lg font-semibold">
                         {row.laptime_display || `${Math.round(row.laptime_ms)} ms`}
-                        {isPb && <span className="badge-pb ml-3">PB</span>}
+                        {isPb && (
+                          <span className="badge-pb ml-3" data-tooltip="Waktu tercepat pada track">
+                            BL
+                          </span>
+                        )}
                       </td>
                       <td>{row.date}</td>
                     </tr>
