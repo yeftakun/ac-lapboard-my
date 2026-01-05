@@ -7,7 +7,7 @@ A lightweight Astro + React template that converts `personalbest.ini` into JSON 
 **Requirements:**
 - git & github account
 - (optional) github cli
-- An `personalbest.ini` file from Assetto Corsa
+- An `personalbest.ini` file from Assetto Corsa. You can find it in `user/Documents/Assetto Corsa/personalbest.ini`, this file will be updated after you record new lap times.
 
 1. **Clone this repo**
 ```
