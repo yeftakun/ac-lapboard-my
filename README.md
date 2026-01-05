@@ -1,57 +1,38 @@
 # Assetto Corsa Lap Board
 
-Lap time board mandiri yang mengadopsi struktur halaman `/assetto-corsa` dari personal site referensi. Proyek ini hanya fokus pada konten lap board dengan tema yang sama.
+## What is this?
+- A lightweight Astro + React template that mirrors the `/assetto-corsa` page from my personal site.
+- Converts `personalbest.ini` into JSON at build time, so the published page always serves the latest lap data without any runtime fetch.
+- Ships with a single config file (`src/data/config.json`) where you control meta tags, featured laps, and driver info.
 
-## Struktur
+## Use it as a template
+**Requirements:**
+- git & github account
+- (optional) github cli
 
-```
-.
-├─ data/
-│  └─ personalbest.ini        # sumber asli dari game
-├─ scripts/
-│  └─ convert-personalbest.mjs # konversi INI → JSON
-├─ src/
-│  ├─ components/
-│  │  └─ LapTable.jsx          # tabel interaktif (React)
-│  ├─ data/
-│  │  └─ laptime.json          # hasil konversi, di-import ke halaman
-│  │  └─ config.json           # preferensi (featured lap)
-│  ├─ layouts/
-│  │  └─ Base.astro            # layout + tema
-│  ├─ pages/
-│  │  ├─ index.astro           # halaman utama lap board
-│  │  └─ assetto-corsa.astro   # alias opsional (konten sama)
-│  └─ styles/
-│     └─ globals.css           # Tailwind + CSS variables (tema sama)
-```
+**To-do:**
+1. **Clone this repo**
+2. **Drop your data.** Copy `personalbest.ini` into `data/` and edit `src/data/config.json` based on your preferences.
+3. **Remove the remote** Run `git remote remove origin`.
+4. **Push to github** If you have github cli installed, run `gh repo create <your-repo-name> --public --source=. --remote=origin --push`. Otherwise, create a new repo on github.com and push manually.
+5. **Match the workflow branch.** Ensure the branch listed in [`main.yml`](.github/workflows/main.yml) under `on: push: branches:` matches your repo’s default branch (e.g., `master` or `main`).
+6. **Enable github pages** Go to your repo settings → Pages → Select **GitHub Actions** as source.
 
-## Workflow
+## Update your lap data
+1. Replace `data/personalbest.ini` with your latest lap data.
+2. Commit and push the changes.
+3. Your site will rebuild automatically.
 
-1. Salin `personalbest.ini` dari `%USERPROFILE%\Documents\Assetto Corsa\cfg/` ke folder `data/`.
-2. Jalankan `npm install` (sekali) lalu gunakan skrip berikut:
-   - `npm run dev` – menjalankan Astro dev server.
-   - `npm run laps:convert` – hanya mengonversi INI ke JSON.
-   - `npm run build` – menjalankan konversi **dan** build Astro untuk deploy GitHub Pages.
-3. Halaman `/assetto-corsa` meng-import `src/data/laptime.json` secara langsung, sehingga build output sudah menyertakan data terbaru tanpa fetch ekstra.
-4. Atur preferensi lewat `src/data/config.json`:
-   - `driverProfile` → nama driver, gear (`gamepad`/`wheel-pedal`/`keyboard-mouse`) + tautan profil.
-   - `featuredLap` → kontrol lap unggulan.
-   - `meta` → judul, deskripsi, URL situs, dan OG image.
-      - `meta.siteUrl` juga dipakai sebagai acuan `site` + `base` Astro. Untuk GitHub Pages project repo, isi dengan format `https://username.github.io/<repo>/`. Jika butuh path berbeda, tambahkan `meta.base` (mis. `"/lapboard/"`).
+## Preview on local
+**Requirements:**
+- Node.js v18+
 
-## Catatan Tambahan
+1. `npm install` to install dependencies.
+2. `npm run build` to convert INI and build the site.
+3. `npm run dev` to start at `http://localhost:4321/`.
 
-- Layout dan warna mengikuti tema personal site: kombinasi light (cobalt) dan dark (graphite + racing red).
-- Komponen tabel mendukung filter, preset dropdown, sorting, dan highlight PB per track.
-- Feel free untuk mengganti font/warna sesuai branding lain; cukup update `src/styles/globals.css`.
+### Quick reference
+- `npm run laps:convert` → convert INI without building.
+- Update fonts/colors in `src/styles/globals.css` if you want a different vibe.
 
-## Deploy ke GitHub Pages
-
-Workflow GitHub Actions [`deploy.yml`](.github/workflows/deploy.yml) otomatis membangun dan mem-publish ke GitHub Pages ketika branch `main` diperbarui. Yang perlu dipersiapkan:
-
-1. Pastikan `data/personalbest.ini` dan `src/data/config.json` ikut di-commit agar langkah konversi di CI memiliki sumber data.
-2. Set `meta.siteUrl` di `src/data/config.json` ke alamat akhir (contoh GitHub Pages project: `https://username.github.io/ac-lapboard/`). Jika perlu path berbeda, tambahkan `meta.base` (mis. `/lapboard/`).
-3. Jalankan `npm run build` secara lokal sebelum push untuk memastikan konversi dan build sukses.
-4. Setelah push pertama, buka **Settings → Pages** pada repo dan pilih sumber **GitHub Actions**.
-
-Konfigurasi `astro.config.mjs` kini membaca `meta.siteUrl`/`meta.base` langsung dari `src/data/config.json`, sehingga semua variabel deploy berada pada satu file yang ikut ter-deploy.
+That’s it — swap the data, tweak config, and you’ve got a self-hosted Assetto Corsa lap archive.*** 
