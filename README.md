@@ -1,9 +1,7 @@
 # Assetto Corsa Lap Board
 
 ## What is this?
-- A lightweight Astro + React template that mirrors the `/assetto-corsa` page from my personal site.
-- Converts `personalbest.ini` into JSON at build time, so the published page always serves the latest lap data without any runtime fetch.
-- Ships with a single config file (`src/data/config.json`) where you control meta tags, featured laps, and driver info.
+A lightweight Astro + React template that converts `personalbest.ini` into JSON at build time, so the published page always serves the latest lap data without any runtime fetch.
 
 ## Use it as a template
 **Requirements:**
