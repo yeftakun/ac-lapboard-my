@@ -25,6 +25,8 @@ git remote remove origin
 6. **Enable github pages** Go to your repo settings → Pages → Select **GitHub Actions** as source.
 7. **Wait for the first deployment.** After pushing, go to the Actions tab and wait for the workflow to finish. Your site should be live at `https://<your-github-username>.github.io/<your-repo-name>/`.
 
+> Note: Once you switch the Pages source to GitHub Actions, the site usually goes live but the dashboard may still show an error. You can ignore it—after the next workflow run (another push/commit or a manual run) the error status will clear.
+
 ## Update your lap data
 1. Replace `data/personalbest.ini` with your latest lap data.
 2. Commit and push the changes.
