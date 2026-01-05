@@ -20,7 +20,7 @@ git clone https://github.com/yeftakun/ac-lapboard
 ```
 git remote remove origin
 ```
-4. **Push to github** If you have github cli installed, run `gh repo create <your-repo-name> --public --source=. --remote=origin --push`. Otherwise, create a new repo on github.com and push manually.
+4. **Push to your github** If you have github cli installed, run `gh repo create <your-repo-name> --public --source=. --remote=origin --push`. Otherwise, create a new repo on github.com and push manually.
 5. **Match the workflow branch.** Ensure the branch listed in [`main.yml`](.github/workflows/main.yml) under `on: push: branches:` matches your repo’s default branch (e.g., `master` or `main`).
 6. **Enable github pages** Go to your repo settings → Pages → Select **GitHub Actions** as source.
 7. **Wait for the first deployment.** After pushing, go to the Actions tab and wait for the workflow to finish. Your site should be live at `https://<your-github-username>.github.io/<your-repo-name>/`.
