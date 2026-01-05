@@ -9,19 +9,26 @@
 **Requirements:**
 - git & github account
 - (optional) github cli
+- An `personalbest.ini` file from Assetto Corsa
 
-**To-do:**
 1. **Clone this repo**
+```
+git clone https://github.com/yeftakun/ac-lapboard
+```
 2. **Drop your data.** Copy `personalbest.ini` into `data/` and edit `src/data/config.json` based on your preferences.
-3. **Remove the remote** Run `git remote remove origin`.
+3. **Remove the remote**
+```
+git remote remove origin
+```
 4. **Push to github** If you have github cli installed, run `gh repo create <your-repo-name> --public --source=. --remote=origin --push`. Otherwise, create a new repo on github.com and push manually.
 5. **Match the workflow branch.** Ensure the branch listed in [`main.yml`](.github/workflows/main.yml) under `on: push: branches:` matches your repo’s default branch (e.g., `master` or `main`).
 6. **Enable github pages** Go to your repo settings → Pages → Select **GitHub Actions** as source.
+7. **Wait for the first deployment.** After pushing, go to the Actions tab and wait for the workflow to finish. Your site should be live at `https://<your-github-username>.github.io/<your-repo-name>/`.
 
 ## Update your lap data
 1. Replace `data/personalbest.ini` with your latest lap data.
 2. Commit and push the changes.
-3. Your site will rebuild automatically.
+3. GitHub Actions will automatically rebuild and deploy your site.
 
 ## Preview on local
 **Requirements:**
