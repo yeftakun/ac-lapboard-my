@@ -14,14 +14,19 @@ A lightweight Astro + React template that converts `personalbest.ini` into JSON 
 git clone https://github.com/yeftakun/ac-lapboard
 ```
 2. **Drop your data.** Copy `personalbest.ini` into `data/` and edit `src/data/config.json` based on your preferences.
-3. **Remove the remote**
+3. **Save change.**
+```
+git add .
+git commit -m "update lap"
+```
+4. **Remove the remote**
 ```
 git remote remove origin
 ```
-4. **Push to your github** If you have github cli installed, run `gh repo create <your-repo-name> --public --source=. --remote=origin --push`. Otherwise, create a new repo on github.com and push manually.
-5. **Match the workflow branch.** Ensure the branch listed in [`main.yml`](.github/workflows/main.yml) under `on: push: branches:` matches your repo’s default branch (e.g., `master` or `main`).
-6. **Enable github pages** Go to your repo settings → Pages → Select **GitHub Actions** as source.
-7. **Wait for the first deployment.** After pushing, go to the Actions tab and wait for the workflow to finish. Your site should be live at `https://<your-github-username>.github.io/<your-repo-name>/`.
+5. **Push to your github** If you have github cli installed, run `gh repo create <your-repo-name> --public --source=. --remote=origin --push`. Otherwise, create a new repo on github.com and push manually.
+6. **Match the workflow branch.** Ensure the branch listed in [`main.yml`](.github/workflows/main.yml) under `on: push: branches:` matches your repo’s default branch (e.g., `master` or `main`).
+7. **Enable github pages** Go to your repo settings → Pages → Select **GitHub Actions** as source.
+8. **Wait for the first deployment.** After pushing, go to the Actions tab and wait for the workflow to finish. Your site should be live at `https://<your-github-username>.github.io/<your-repo-name>/`.
 
 > Note: Once you switch the Pages source to GitHub Actions, the site usually goes live but the dashboard may still show an error. You can ignore it—after the next workflow run (another push/commit or a manual run) the error status will clear.
 
