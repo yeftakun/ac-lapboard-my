@@ -36,7 +36,7 @@ const imageAlt = Astro.props.imageAlt ?? 'Lap time preview';
 const ogType = Astro.props.ogType ?? 'website';
 ---
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -101,16 +101,16 @@ const ogType = Astro.props.ogType ?? 'website';
         <div class="how-modal__header">
           <div>
             <p class="text-xs uppercase tracking-wide text-[var(--muted)]">How it works</p>
-            <h2 id="how-modal-title" class="text-2xl font-semibold">Pipeline singkat</h2>
+            <h2 id="how-modal-title" class="text-2xl font-semibold">Quick pipeline</h2>
           </div>
-          <button type="button" class="modal-close" data-modal-close aria-label="Tutup modal">&times;</button>
+          <button type="button" class="modal-close" data-modal-close aria-label="Close modal">&times;</button>
         </div>
-        <p class="text-sm text-[var(--muted)]">Alur yang mirip dengan referensi personal site.</p>
+        <p class="text-sm text-[var(--muted)]">Same flow we use in the reference personal site.</p>
         <ol class="modal-steps">
-          <li>1. Salin <code>personalbest.ini</code> ke folder <code>data/</code>.</li>
-          <li>2. Jalankan <code>npm run build</code> atau <code>npm run laps:convert</code>.</li>
-          <li>3. Script <code>scripts/convert-personalbest.mjs</code> menghasilkan <code>src/data/laptime.json</code>.</li>
-          <li>4. Halaman ini meng-import JSON tersebut dan me-render tabel React.</li>
+          <li>1. Copy <code>personalbest.ini</code> into the <code>data/</code> folder.</li>
+          <li>2. Run <code>npm run build</code> or <code>npm run laps:convert</code>.</li>
+          <li>3. The converter <code>scripts/convert-personalbest.mjs</code> produces <code>src/data/laptime.json</code>.</li>
+          <li>4. This page imports that JSON and renders the React table.</li>
         </ol>
       </div>
     </div>

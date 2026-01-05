@@ -10,7 +10,7 @@ const heroDefaults = {
   title: metaConfig.title ?? 'Assetto Corsa Lap Time Board',
   description:
     metaConfig.description ??
-    'Tarik file personalbest.ini langsung dari folder Assetto Corsa, jalankan npm run build, dan tabel ini akan ter-update. Semua styling mengikuti tema personal site sebagai referensi.',
+    'Drop your personalbest.ini straight from Assetto Corsa, run npm run build, and the table refreshes automatically. Styling mirrors the reference personal site.',
 };
 
 const hero = { ...heroDefaults, ...(Astro.props.hero ?? {}) };
@@ -43,7 +43,7 @@ const featuredLap = featuredConfig.show
   : null;
 
 const lastDate = laps.reduce((latest, lap) => (latest > lap.date ? latest : lap.date), laps[0]?.date ?? null);
-const humanReadableLastDate = lastDate ? new Intl.DateTimeFormat('id-ID', { dateStyle: 'medium' }).format(new Date(lastDate)) : '—';
+const humanReadableLastDate = lastDate ? new Intl.DateTimeFormat('en-US', { dateStyle: 'medium' }).format(new Date(lastDate)) : '—';
 ---
 <section class="space-y-6">
   <div class="space-y-4">
@@ -77,17 +77,17 @@ const humanReadableLastDate = lastDate ? new Intl.DateTimeFormat('id-ID', { date
     <div class="stat-card">
       <p class="text-sm text-[var(--muted)] uppercase tracking-wide">Total Laps</p>
       <p class="stat-value">{lapCount}</p>
-      <p class="text-xs text-[var(--muted)]">Diambil dari personalbest.ini</p>
+      <p class="text-xs text-[var(--muted)]">Pulled from personalbest.ini</p>
     </div>
     <div class="stat-card">
       <p class="text-sm text-[var(--muted)] uppercase tracking-wide">Tracks</p>
       <p class="stat-value">{trackCount}</p>
-      <p class="text-xs text-[var(--muted)]">Varian sirkuit yang tercatat</p>
+      <p class="text-xs text-[var(--muted)]">Unique layouts logged</p>
     </div>
     <div class="stat-card">
       <p class="text-sm text-[var(--muted)] uppercase tracking-wide">Cars</p>
       <p class="stat-value">{carCount}</p>
-      <p class="text-xs text-[var(--muted)]">Mobil berbeda</p>
+      <p class="text-xs text-[var(--muted)]">Different cars</p>
     </div>
     {featuredConfig.show && (
       <div class="stat-card border-[var(--primary)]">
@@ -99,7 +99,7 @@ const humanReadableLastDate = lastDate ? new Intl.DateTimeFormat('id-ID', { date
             {featuredConfig.note && <p class="text-xs text-[var(--muted)]">{featuredConfig.note}</p>}
           </>
         ) : (
-          <p class="text-xs text-[var(--muted)]">Lap tidak ditemukan, cek pengaturan config.json.</p>
+          <p class="text-xs text-[var(--muted)]">Lap not found, double-check config.json.</p>
         )}
       </div>
     )}

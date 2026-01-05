@@ -8,7 +8,7 @@
     }
   },
   "featuredLap": {
-    "show": false,
+    "show": true,
     "track": "KS_NORDSCHLEIFE-NORDSCHLEIFE",
     "car": "KS_MCLAREN_650_GT3",
     "note": "Keknya ini lap gt3 terbaik gw dah..."

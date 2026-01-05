@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react';
 
-const dateFormatter = new Intl.DateTimeFormat('id-ID', {
+const dateFormatter = new Intl.DateTimeFormat('en-US', {
   year: 'numeric',
   month: 'short',
   day: 'numeric',
@@ -76,22 +76,22 @@ export default function LapTable({ rows = [] }) {
       <div className="filter-grid">
         <input
           className="filter-input"
-          placeholder="Cari track"
-          aria-label="Cari track"
+          placeholder="Search track"
+          aria-label="Search track"
           value={filters.track}
           onChange={(event) => setFilters((prev) => ({ ...prev, track: event.target.value }))}
         />
         <input
           className="filter-input"
-          placeholder="Cari mobil"
-          aria-label="Cari mobil"
+          placeholder="Search car"
+          aria-label="Search car"
           value={filters.car}
           onChange={(event) => setFilters((prev) => ({ ...prev, car: event.target.value }))}
         />
       </div>
       <div className="flex flex-wrap items-center justify-between gap-3 text-sm text-[var(--muted)]">
         <span>
-          {sorted.length} lap&nbsp;•&nbsp;{filters.track || filters.car ? 'Filter aktif' : 'Semua data'}
+          {sorted.length} lap&nbsp;•&nbsp;{filters.track || filters.car ? 'Filters on' : 'All entries'}
         </span>
         <button type="button" className="btn btn-ghost text-xs" onClick={clearFilters}>
           Reset filter
@@ -120,7 +120,7 @@ export default function LapTable({ rows = [] }) {
               {sorted.length === 0 ? (
                 <tr>
                   <td colSpan={4} className="py-8 text-center text-sm text-[var(--muted)]">
-                    Tidak ada data yang cocok dengan filter.
+                    Nothing matches your filter.
                   </td>
                 </tr>
               ) : (
@@ -138,7 +138,7 @@ export default function LapTable({ rows = [] }) {
                       <td className="tabular-nums text-lg font-semibold">
                         {row.laptime_display || `${Math.round(row.laptime_ms)} ms`}
                         {isPb && (
-                          <span className="badge-pb ml-3" data-tooltip="Waktu tercepat pada track">
+                          <span className="badge-pb ml-3" data-tooltip="Fastest lap on this track">
                             BL
                           </span>
                         )}
