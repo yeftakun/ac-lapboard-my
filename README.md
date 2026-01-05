@@ -37,6 +37,7 @@ Lap time board mandiri yang mengadopsi struktur halaman `/assetto-corsa` dari pe
    - `driverProfile` → nama driver, gear (`gamepad`/`wheel-pedal`/`keyboard-mouse`) + tautan profil.
    - `featuredLap` → kontrol lap unggulan.
    - `meta` → judul, deskripsi, URL situs, dan OG image.
+      - `meta.siteUrl` juga dipakai sebagai acuan `site` + `base` Astro. Untuk GitHub Pages project repo, isi dengan format `https://username.github.io/<repo>/`. Jika butuh path berbeda, tambahkan `meta.base` (mis. `"/lapboard/"`).
 
 ## Catatan Tambahan
 
@@ -49,8 +50,8 @@ Lap time board mandiri yang mengadopsi struktur halaman `/assetto-corsa` dari pe
 Workflow GitHub Actions [`deploy.yml`](.github/workflows/deploy.yml) otomatis membangun dan mem-publish ke GitHub Pages ketika branch `main` diperbarui. Yang perlu dipersiapkan:
 
 1. Pastikan `data/personalbest.ini` dan `src/data/config.json` ikut di-commit agar langkah konversi di CI memiliki sumber data.
-2. Jalankan `npm run build` secara lokal sebelum push untuk memastikan konversi dan build sukses.
-3. Setelah push pertama, buka **Settings → Pages** pada repo dan pilih sumber **GitHub Actions**.
-4. (Opsional) Jika memakai custom domain atau ingin menimpa URL yang dihitung otomatis, set repository variable `SITE_URL` ke alamat penuh (mis. `https://fastlaps.example.com/`).
+2. Set `meta.siteUrl` di `src/data/config.json` ke alamat akhir (contoh GitHub Pages project: `https://username.github.io/ac-lapboard/`). Jika perlu path berbeda, tambahkan `meta.base` (mis. `/lapboard/`).
+3. Jalankan `npm run build` secara lokal sebelum push untuk memastikan konversi dan build sukses.
+4. Setelah push pertama, buka **Settings → Pages** pada repo dan pilih sumber **GitHub Actions**.
 
-Konfigurasi `astro.config.mjs` akan men-set `site` dan `base` otomatis berdasarkan repo GitHub sehingga output sudah sesuai path GitHub Pages (`https://username.github.io/<repo>/`). Tidak ada konfigurasi tambahan yang dibutuhkan di luar langkah di atas.
+Konfigurasi `astro.config.mjs` kini membaca `meta.siteUrl`/`meta.base` langsung dari `src/data/config.json`, sehingga semua variabel deploy berada pada satu file yang ikut ter-deploy.

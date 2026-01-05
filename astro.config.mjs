@@ -1,36 +1,46 @@
 import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
 import tailwind from '@astrojs/tailwind';
-
-const repository = process.env.GITHUB_REPOSITORY ?? '';
-const [repoOwner = '', repoName = ''] = repository.split('/');
-const isGithubPages = process.env.GITHUB_ACTIONS === 'true';
-const isUserOrOrgPage = repoName.endsWith?.('.github.io') ?? false;
+import siteConfig from './src/data/config.json' assert { type: 'json' };
 
 const ensureTrailingSlash = (value) => {
   if (!value) return '/';
   return value.endsWith('/') ? value : `${value}/`;
 };
 
-const derivedBase = isGithubPages && repoName && !isUserOrOrgPage ? `/${repoName}/` : '/';
+const normalizeBase = (value) => {
+  if (!value || value === '/') return '/';
+  const trimmed = value.replace(/^\/+|\/+$/gu, '');
+  return trimmed ? `/${trimmed}/` : '/';
+};
 
-const derivedSite = (() => {
-  if (process.env.SITE_URL) {
-    return ensureTrailingSlash(process.env.SITE_URL);
-  }
-  if (repoOwner) {
-    if (isUserOrOrgPage && repoName) {
-      return ensureTrailingSlash(`https://${repoName}`);
-    }
-    if (repoName) {
-      return ensureTrailingSlash(`https://${repoOwner}.github.io${derivedBase}`);
+const resolveSiteUrl = () => {
+  const fromConfig = siteConfig?.meta?.siteUrl;
+  if (fromConfig) {
+    try {
+      return ensureTrailingSlash(new URL(fromConfig).href);
+    } catch {
+      return ensureTrailingSlash(fromConfig);
     }
   }
   return ensureTrailingSlash('https://example.com');
+};
+
+const siteUrl = resolveSiteUrl();
+
+const derivedBase = (() => {
+  const explicitBase = siteConfig?.meta?.base;
+  if (explicitBase) return normalizeBase(explicitBase);
+  try {
+    const url = new URL(siteUrl);
+    return normalizeBase(url.pathname);
+  } catch {
+    return '/';
+  }
 })();
 
 export default defineConfig({
-  site: derivedSite,
+  site: siteUrl,
   base: derivedBase,
   output: 'static',
   integrations: [react(), tailwind({ applyBaseStyles: true })],
