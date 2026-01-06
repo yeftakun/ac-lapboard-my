@@ -105,12 +105,12 @@ const ogType = Astro.props.ogType ?? 'website';
           </div>
           <button type="button" class="modal-close" data-modal-close aria-label="Close modal">&times;</button>
         </div>
-        <p class="text-sm text-[var(--muted)]">The board watches a tiny pipeline that turns your Assetto Corsa telemetry into a shareable table.</p>
+        <p class="text-sm text-[var(--muted)]">It’s basically a short loop that turns the Assetto Corsa lap file into the table you see here.</p>
         <ol class="modal-steps">
-          <li><strong>Source.</strong> Drop your <code>personalbest.ini</code> into <code>data/</code>; it mirrors what the simulator writes after a session.</li>
-          <li><strong>Conversion.</strong> Running <code>npm run build</code> or <code>npm run laps:convert</code> triggers <code>scripts/convert-personalbest.mjs</code>, which normalizes track, car, and lap metadata.</li>
-          <li><strong>Data layer.</strong> The converter emits <code>src/data/laptime.json</code>, giving the UI a clean JSON snapshot.</li>
-          <li><strong>UI render.</strong> The Astro page imports that JSON and feeds it into the React table so you can scan gaps and PBs at a glance.</li>
+          <li><strong>Drop the file.</strong> Copy <code>personalbest.ini</code> into <code>data/</code>; it’s the same file the game updates after every stint.</li>
+          <li><strong>Run the converter.</strong> <code>npm run build</code> or <code>npm run laps:convert</code> spins up <code>scripts/convert-personalbest.mjs</code> to tidy up the track, car, and lap info.</li>
+          <li><strong>Save the data.</strong> That script writes <code>src/data/laptime.json</code>, so the site has clean JSON to read from.</li>
+          <li><strong>Render the table.</strong> Astro imports the JSON and hands it to the React table component, which shows your PBs and gaps.</li>
         </ol>
       </div>
     </div>
