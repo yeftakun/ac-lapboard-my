@@ -115,6 +115,10 @@ const ogType = Astro.props.ogType ?? 'website';
       </div>
     </div>
 
+    <button type="button" class="back-to-top" data-back-to-top aria-label="Back to top" hidden>
+      <span aria-hidden="true">↑</span>
+    </button>
+
     <script is:inline>
       const toggles = document.querySelectorAll('[data-theme-toggle]');
       const root = document.documentElement;
@@ -149,6 +153,20 @@ const ogType = Astro.props.ogType ?? 'website';
           if (event.key === 'Escape' && !modal.hidden) {
             setModalState(false);
           }
+        });
+      }
+
+      const backToTop = document.querySelector('[data-back-to-top]');
+      if (backToTop) {
+        const toggleBackToTop = () => {
+          const shouldShow = window.scrollY > 320;
+          backToTop.hidden = !shouldShow;
+        };
+
+        toggleBackToTop();
+        window.addEventListener('scroll', toggleBackToTop, { passive: true });
+        backToTop.addEventListener('click', () => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
         });
       }
     </script>
