@@ -596,6 +596,12 @@ select:focus {
 
 .back-to-top span[aria-hidden='true'] {
   font-size: 1rem;
+  display: inline-block;
+  transition: transform 260ms ease;
+}
+
+.back-to-top[data-direction='bottom'] span[aria-hidden='true'] {
+  transform: rotate(180deg);
 }
 
 .back-to-top:hover,

@@ -175,7 +175,15 @@ const ogType = Astro.props.ogType ?? 'website';
       </p>
     </section>
 
-    <button type="button" class="back-to-top" data-back-to-top aria-label="Back to top" hidden>
+    <button
+      type="button"
+      class="back-to-top"
+      data-back-to-top
+      data-direction="bottom"
+      aria-label="Go to bottom"
+      title="Go to bottom"
+      hidden
+    >
       <span aria-hidden="true">↑</span>
     </button>
 
@@ -253,15 +261,37 @@ const ogType = Astro.props.ogType ?? 'website';
 
       const backToTop = document.querySelector('[data-back-to-top]');
       if (backToTop) {
-        const toggleBackToTop = () => {
-          const shouldShow = window.scrollY > 320;
-          backToTop.hidden = !shouldShow;
+        const showThreshold = 50;
+        const directionThreshold = 500;
+
+        const setButtonMeta = (direction) => {
+          const label = direction === 'bottom' ? 'Go to bottom' : 'Back to top';
+          backToTop.dataset.direction = direction;
+          backToTop.setAttribute('aria-label', label);
+          backToTop.title = label;
         };
 
-        toggleBackToTop();
-        window.addEventListener('scroll', toggleBackToTop, { passive: true });
+        const updateBackButton = () => {
+          const scrollY = window.scrollY;
+          if (scrollY < showThreshold) {
+            backToTop.hidden = true;
+            setButtonMeta('bottom');
+            return;
+          }
+
+          backToTop.hidden = false;
+          const direction = scrollY <= directionThreshold ? 'bottom' : 'top';
+          setButtonMeta(direction);
+        };
+
+        updateBackButton();
+        window.addEventListener('scroll', updateBackButton, { passive: true });
+
         backToTop.addEventListener('click', () => {
-          window.scrollTo({ top: 0, behavior: 'smooth' });
+          const direction = backToTop.dataset.direction ?? 'top';
+          const doc = document.documentElement;
+          const target = direction === 'bottom' ? doc.scrollHeight - doc.clientHeight : 0;
+          window.scrollTo({ top: target, behavior: 'smooth' });
         });
       }
     </script>
