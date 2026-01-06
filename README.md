@@ -15,6 +15,7 @@ git clone https://github.com/yeftakun/ac-lapboard
 ```
 2. **Drop your data.** Copy `personalbest.ini` into `data/` and edit `src/data/config.json` based on your preferences.
 > Gear options: `gamepad`, `wheel-pedal`, `keyboard-mouse`.
+> Found the file at `C:\User\<you>\Documents\Assetto Corsa\personalbest.ini`
 3. **Save change.**
 ```
 git add .
