@@ -48,4 +48,4 @@ git remote remove origin
 - `npm run laps:convert` → convert INI without building.
 - Update fonts/colors in `src/styles/globals.css` if you want a different vibe.
 
-That’s it — swap the data, tweak config, and you’ve got a self-hosted Assetto Corsa lap archive.*** 
+That’s it — swap the data, tweak config, and you’ve got a self-hosted Assetto Corsa lap archive. 

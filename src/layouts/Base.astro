@@ -86,10 +86,22 @@ const ogType = Astro.props.ogType ?? 'website';
     <footer class="border-t border-[var(--border)] bg-[color-mix(in_srgb,var(--bg)_92%,transparent)]">
       <div class="mx-auto flex max-w-5xl flex-col gap-3 px-6 py-8 text-sm text-[var(--muted)] md:flex-row md:items-center md:justify-between">
         <span><i>It’s not about pushing harder, but knowing the limit and holding it.</i></span>
-        <div class="flex gap-4 text-xs uppercase tracking-wide">
+        <div class="flex gap-4 text-xs uppercase tracking-wide items-center">
           <a href="https://github.com/yeftakun/ac-lapboard" target="_blank" rel="noreferrer" class="hover:text-[var(--primary)]">Get the Template</a>
           <button type="button" data-how-it-works class="button-link hover:text-[var(--primary)]" aria-haspopup="dialog">
             HOW IT WORKS
+          </button>
+          <button
+            type="button"
+            class="info-icon"
+            data-about-toggle
+            aria-haspopup="true"
+            aria-expanded="false"
+            aria-controls="about-panel"
+            title="About this project"
+          >
+            <span aria-hidden="true">ℹ</span>
+            <span class="sr-only">About this project</span>
           </button>
         </div>
       </div>
@@ -114,6 +126,56 @@ const ogType = Astro.props.ogType ?? 'website';
         </ol>
       </div>
     </div>
+
+    <section class="about-panel" data-about-panel id="about-panel" hidden tabindex="-1" aria-label="Project information">
+      <button type="button" class="about-panel__close" data-about-close aria-label="Close about panel">&times;</button>
+      <p class="about-panel__eyebrow">About</p>
+      <h3 class="about-panel__title">Stack & credits</h3>
+      <p class="about-panel__hint">Stack</p>
+      <div class="about-panel__stack" role="list">
+        <button type="button" class="stack-icon stack-icon--astro" aria-label="Astro" title="Astro" role="listitem">
+          <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+            <path fill="#ff5f40" d="M37.6 4.1 54.9 52H44.5L38 36.8H26L19.5 52H9.1L26.4 4.1A2.3 2.3 0 0 1 28.5 2h7a2.3 2.3 0 0 1 2.1 2.1Z" />
+            <path fill="#0f172a" d="m24 44 8-22 8 22z" />
+          </svg>
+        </button>
+        <button type="button" class="stack-icon stack-icon--react" aria-label="React" title="React" role="listitem">
+          <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+            <g stroke="#61dafb" stroke-width="3" stroke-linecap="round">
+              <ellipse cx="32" cy="32" rx="20" ry="9" />
+              <ellipse cx="32" cy="32" rx="20" ry="9" transform="rotate(60 32 32)" />
+              <ellipse cx="32" cy="32" rx="20" ry="9" transform="rotate(120 32 32)" />
+              <circle fill="#61dafb" cx="32" cy="32" r="4" stroke="none" />
+            </g>
+          </svg>
+        </button>
+        <button type="button" class="stack-icon stack-icon--tailwind" aria-label="Tailwind CSS" title="Tailwind CSS" role="listitem">
+          <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+            <path fill="#38bdf8" d="M32 14c-9 0-13.8 4.8-14.3 14.3 2.9-4.3 6.3-5.9 10.1-4.9 2.2.6 3.8 2.2 5.6 4.1 2.7 2.7 5.9 5.9 12.9 5.9 9 0 13.8-4.8 14.3-14.3-2.9 4.3-6.3 6-10.1 4.9-2.2-.6-3.8-2.2-5.6-4.1C41.2 17.2 38 14 32 14Zm-14.3 18C15 36.3 11.6 38 7.8 37c-2.2-.6-3.8-2.2-5.6-4.1C-.5 30.2-3.7 27-10.7 27c-9 0-13.8 4.8-14.3 14.3 2.9-4.3 6.3-6 10.1-4.9 2.2.6 3.8 2.2 5.6 4.1 2.7 2.7 5.9 5.9 12.9 5.9 9 0 13.8-4.8 14.3-14.4Z" transform="translate(22 6)" />
+          </svg>
+        </button>
+        <button type="button" class="stack-icon stack-icon--vite" aria-label="Vite" title="Vite" role="listitem">
+          <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+            <defs>
+              <linearGradient id="vitePurple" x1="32" y1="6" x2="32" y2="58" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#a855f7" />
+                <stop offset="1" stop-color="#7c3aed" />
+              </linearGradient>
+              <linearGradient id="viteYellow" x1="32" y1="8" x2="32" y2="46" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#facc15" />
+                <stop offset="1" stop-color="#f97316" />
+              </linearGradient>
+            </defs>
+            <path fill="url(#vitePurple)" d="M8 10.5 32 58l24-47.5L34.4 6h-4.8z" />
+            <path fill="url(#viteYellow)" d="M26 8 32.1 34 38 8h-4.4L32 16l-1.6-8z" />
+          </svg>
+        </button>
+      </div>
+      <p class="about-panel__thanks">Thanks to <strong>GPT-5.1-Codex</strong> <span class="about-panel__note">(vibe code dawg🥀)</span></p>
+      <p class="about-panel__author">
+        Author <a href="https://github.com/yeftakun" target="_blank" rel="noreferrer">@yeftakun</a>
+      </p>
+    </section>
 
     <button type="button" class="back-to-top" data-back-to-top aria-label="Back to top" hidden>
       <span aria-hidden="true">↑</span>
@@ -152,6 +214,41 @@ const ogType = Astro.props.ogType ?? 'website';
         document.addEventListener('keydown', (event) => {
           if (event.key === 'Escape' && !modal.hidden) {
             setModalState(false);
+          }
+        });
+      }
+
+      const aboutToggle = document.querySelector('[data-about-toggle]');
+      const aboutPanel = document.querySelector('[data-about-panel]');
+      if (aboutToggle && aboutPanel) {
+        const closeAbout = aboutPanel.querySelector('[data-about-close]');
+        const setAboutState = (open) => {
+          aboutPanel.hidden = !open;
+          aboutToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+          if (open) {
+            aboutPanel.focus();
+          }
+        };
+
+        aboutToggle.addEventListener('click', (event) => {
+          event.stopPropagation();
+          const nextState = aboutToggle.getAttribute('aria-expanded') !== 'true';
+          setAboutState(nextState);
+        });
+
+        closeAbout?.addEventListener('click', () => setAboutState(false));
+
+        document.addEventListener('click', (event) => {
+          if (aboutPanel.hidden) return;
+          const clickedToggle = aboutToggle.contains(event.target);
+          if (!aboutPanel.contains(event.target) && !clickedToggle) {
+            setAboutState(false);
+          }
+        });
+
+        document.addEventListener('keydown', (event) => {
+          if (event.key === 'Escape' && aboutToggle.getAttribute('aria-expanded') === 'true') {
+            setAboutState(false);
           }
         });
       }
