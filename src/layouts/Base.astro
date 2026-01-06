@@ -105,12 +105,12 @@ const ogType = Astro.props.ogType ?? 'website';
           </div>
           <button type="button" class="modal-close" data-modal-close aria-label="Close modal">&times;</button>
         </div>
-        <p class="text-sm text-[var(--muted)]">Same flow we use in the reference personal site.</p>
+        <p class="text-sm text-[var(--muted)]">The board watches a tiny pipeline that turns your Assetto Corsa telemetry into a shareable table.</p>
         <ol class="modal-steps">
-          <li>1. Copy <code>personalbest.ini</code> into the <code>data/</code> folder.</li>
-          <li>2. Run <code>npm run build</code> or <code>npm run laps:convert</code>.</li>
-          <li>3. The converter <code>scripts/convert-personalbest.mjs</code> produces <code>src/data/laptime.json</code>.</li>
-          <li>4. This page imports that JSON and renders the React table.</li>
+          <li><strong>Source.</strong> Drop your <code>personalbest.ini</code> into <code>data/</code>; it mirrors what the simulator writes after a session.</li>
+          <li><strong>Conversion.</strong> Running <code>npm run build</code> or <code>npm run laps:convert</code> triggers <code>scripts/convert-personalbest.mjs</code>, which normalizes track, car, and lap metadata.</li>
+          <li><strong>Data layer.</strong> The converter emits <code>src/data/laptime.json</code>, giving the UI a clean JSON snapshot.</li>
+          <li><strong>UI render.</strong> The Astro page imports that JSON and feeds it into the React table so you can scan gaps and PBs at a glance.</li>
         </ol>
       </div>
     </div>
