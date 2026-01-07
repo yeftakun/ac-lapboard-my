@@ -117,10 +117,10 @@ const ogType = Astro.props.ogType ?? 'website';
           </div>
           <button type="button" class="modal-close" data-modal-close aria-label="Close modal">&times;</button>
         </div>
-        <p class="text-sm text-[var(--muted)]">It’s basically a short loop that turns the Assetto Corsa lap file into the table you see here.</p>
+        <p class="text-sm text-[var(--muted)]">It’s basically turns the Assetto Corsa lap file into the table you see here.</p>
         <ol class="modal-steps">
-          <li><strong>Drop the file.</strong> Copy <code>personalbest.ini</code> into <code>data/</code>; it’s the same file the game updates after every stint.</li>
-          <li><strong>Run the converter.</strong> <code>npm run build</code> or <code>npm run laps:convert</code> spins up <code>scripts/convert-personalbest.mjs</code> to tidy up the track, car, and lap info.</li>
+          <li><strong>Drop the file.</strong> Copy <code>personalbest.ini</code> into <code>data/</code></li>
+          <li><strong>Converter</strong> (<code>scripts/convert-personalbest.mjs</code>) will be tidy up the track, car, and lap info.</li>
           <li><strong>Save the data.</strong> That script writes <code>src/data/laptime.json</code>, so the site has clean JSON to read from.</li>
           <li><strong>Render the table.</strong> Astro imports the JSON and hands it to the React table component, which shows your PBs and gaps.</li>
         </ol>
