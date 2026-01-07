@@ -50,4 +50,49 @@ git remote remove origin
 - `npm run laps:convert` → convert INI without building.
 - Update fonts/colors in `src/styles/globals.css` if you want a different vibe.
 
+---
+
+## FAQ
+
+<details>
+	<summary><b>Q: Is this free?</b></summary>
+	A: Yep! The template is 100% free and open-source.
+</details>
+
+<details>
+	<summary><b>Q: Do I need to know how to code?</b></summary>
+	A: Nope. You just need to follow the steps in the tutorial. No coding skills required.
+</details>
+
+<details>
+	<summary><b>Q: Do I need to pay for hosting or tools?</b></summary>
+	A: Not at all. Everything used here is free, and GitHub Pages hosts your site for $0.
+</details>
+
+<details>
+	<summary><b>Q: Why use this over other apps?</b></summary>
+	A:
+	<ul>
+		<li><b>Full Control:</b> You own your data.</li>
+		<li><b>Lightweight:</b> No background apps running while you race.</li>
+		<li><b>Customizable:</b> Since you have the code, you can tweak the look however you like.</li>
+	</ul>
+</details>
+
+<details>
+	<summary><b>Q: Does it work with Mod tracks/cars?</b></summary>
+	A: Yes! It reads directly from your <code>personalbest.ini</code>, so any track or car you drive will show up automatically.
+</details>
+
+<details>
+	<summary><b>Q: How do I update my lap times?</b></summary>
+	A: Just replace the <code>personalbest.ini</code> file in your repository and commit the changes. The site updates itself automatically.
+</details>
+
+<details>
+	<summary><b>Q: Is the data validated / any anti-cheat?</b></summary>
+	A: Nope. Since it reads from a simple text file, the numbers can be easily manipulated. But I trust you guys to keep it real... right? ...Right?
+</details>
+
+---
 That’s it — swap the data, tweak config, and you’ve got a self-hosted Assetto Corsa lap archive. 
