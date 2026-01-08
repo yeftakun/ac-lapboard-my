@@ -16,7 +16,8 @@
   "meta": {
     "title": "Lap Board",
     "description": "My personal best lap times in Assetto Corsa.",
-    "siteUrl": "https://yeftakun.github.io/ac-lapboard/",
+    "siteUrl": "https://aclap.yeftaasyel.my.id/",
+    "base": "/",
     "image": "/og-image.png"
   }
 }
