@@ -9,8 +9,8 @@
   },
   "featuredLap": {
     "show": true,
-    "track": "KS_NORDSCHLEIFE-NORDSCHLEIFE",
-    "car": "KS_MCLAREN_650_GT3",
+    "track": "TRACK_NAME",
+    "car": "CAR_NAME",
     "note": "Finally best laptime:)"
   },
   "meta": {
