@@ -1,17 +1,17 @@
 {
   "driverProfile": {
-    "name": "Yefta Asyel",
-    "gear": "gamepad",
+    "name": "Your Name",
+    "gear": "wheel-pedal",
     "featuredLink": {
-      "label": "Steam",
-      "url": "https://steamcommunity.com/id/shironeko64"
+      "label": "Your Label Name",
+      "url": "https://example.com"
     }
   },
   "featuredLap": {
     "show": true,
     "track": "KS_NORDSCHLEIFE-NORDSCHLEIFE",
     "car": "KS_MCLAREN_650_GT3",
-    "note": "Keknya ini lap gt3 terbaik gw dah..."
+    "note": "Finally best laptime:)"
   },
   "meta": {
     "title": "Lap Board",
