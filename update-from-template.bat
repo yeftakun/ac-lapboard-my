@@ -8,6 +8,7 @@ if not exist .gitattributes (
   echo data/personalbest.ini merge=ours>.gitattributes
   echo src/data/config.json merge=ours>>.gitattributes
   echo update-from-template.bat merge=ours>>.gitattributes
+  echo README.md merge=ours>>.gitattributes
 )
 
 echo [2/6] Checking for remote "upstream"...
