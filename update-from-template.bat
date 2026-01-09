@@ -35,6 +35,7 @@ echo [6/6] Pushing merged changes to origin...
 git push
 if errorlevel 1 goto :error
 
+echo.
 echo Your web has been updated!
 echo Now github actions should run build workflow...
 set /p _="(Enter) "
