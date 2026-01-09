@@ -38,17 +38,27 @@ function formatLap(ms) {
 const iniPath = path.resolve('data/personalbest.ini');
 const outDir = path.resolve('src/data');
 const outPath = path.join(outDir, 'laptime.json');
+const metaPath = path.join(outDir, 'meta.json');
+
+const formatDateOnlyUTC = (dateLike) =>
+  new Intl.DateTimeFormat('en-US', { dateStyle: 'medium', timeZone: 'UTC' }).format(dateLike);
 
 fs.mkdirSync(outDir, { recursive: true });
 
 if (!fs.existsSync(iniPath)) {
   console.warn(`Skipping conversion: missing ${iniPath}`);
   fs.writeFileSync(outPath, '[]');
+  fs.writeFileSync(
+    metaPath,
+    JSON.stringify({ lastModifiedMs: null, lastModifiedISO: null, lastModifiedDateUTC: null }, null, 2),
+    'utf-8',
+  );
   process.exit(0);
 }
 
 const text = fs.readFileSync(iniPath, 'utf-8');
 const lines = text.split(/\r?\n/);
+const iniStats = fs.statSync(iniPath);
 
 const rows = [];
 let current = null;
@@ -100,3 +110,12 @@ for (const rawLine of lines) {
 
 fs.writeFileSync(outPath, JSON.stringify(rows, null, 2), 'utf-8');
 console.log(`Converted ${rows.length} laps → ${path.relative(process.cwd(), outPath)}`);
+
+const meta = {
+  lastModifiedMs: iniStats.mtimeMs,
+  lastModifiedISO: iniStats.mtime.toISOString(),
+  lastModifiedDateUTC: formatDateOnlyUTC(iniStats.mtime),
+};
+
+fs.writeFileSync(metaPath, JSON.stringify(meta, null, 2), 'utf-8');
+console.log(`Wrote meta → ${path.relative(process.cwd(), metaPath)}`);
