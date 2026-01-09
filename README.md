@@ -38,9 +38,19 @@ To pull in the latest updates from this template repo run `update-from-template.
 > This updater script was added after the initial release. If you cloned the template before it existed, [download the script](https://github.com/yeftakun/ac-lapboard/releases/download/1.0.0/update-from-template.bat ) and place it in the repository root.
 
 ## Update your lap data
-1. Replace `data/personalbest.ini` with your latest lap data.
-2. Commit and push the changes.
-3. GitHub Actions will automatically rebuild and deploy your site.
+<details>
+	<summary><b>Update manualy</b></summary>
+	1. Replace `data/personalbest.ini` with your latest lap data.
+	2. Commit and push the changes.
+	3. GitHub Actions will automatically rebuild and deploy your site.	
+</details>
+<details>
+	<summary><b>Lap Updater (New)</b></summary>
+	1. Requires: `.NET 8`
+	2. [Download app](https://github.com/yeftakun/lap-updater/releases/download/1.0.0/LapUpdater-ns.zip)
+	3. Follow the instruction on the app.
+</details>
+
 
 ## Preview on local
 **Requirements:**
