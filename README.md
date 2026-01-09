@@ -33,6 +33,10 @@ git remote remove origin
 
 > Note: Once you switch the Pages source to GitHub Actions, the site usually goes live but the dashboard may still show an error. You can ignore it—after the next workflow run (another push/commit or a manual run) the error status will clear.
 
+## Get the latest updates
+To pull in the latest updates from this template repo run `update-from-template.bat`. This script fetches and merges changes from the original repo.
+> This updater script was added after the initial release. If you cloned the template before it existed, download the script and place it in the repository root.
+
 ## Update your lap data
 1. Replace `data/personalbest.ini` with your latest lap data.
 2. Commit and push the changes.
