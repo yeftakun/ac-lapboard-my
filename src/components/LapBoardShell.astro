@@ -1,6 +1,7 @@
 ---
 import LapTable from './LapTable.jsx';
 import laps from '../data/laptime.json';
+import meta from '../data/meta.json';
 import userConfig from '../data/config.json';
 
 const driverProfile = userConfig?.driverProfile ?? null;
@@ -42,8 +43,13 @@ const featuredLap = featuredConfig.show
     )
   : null;
 
-const lastDate = laps.reduce((latest, lap) => (latest > lap.date ? latest : lap.date), laps[0]?.date ?? null);
-const humanReadableLastDate = lastDate ? new Intl.DateTimeFormat('en-US', { dateStyle: 'medium' }).format(new Date(lastDate)) : '—';
+const formatDateOnly = (dateLike) => new Intl.DateTimeFormat('en-US', { dateStyle: 'medium', timeZone: 'UTC' }).format(dateLike);
+const humanReadableLastDate = meta?.lastModifiedDateUTC
+  ? meta.lastModifiedDateUTC
+  : (() => {
+      const lastDate = laps.reduce((latest, lap) => (latest > lap.date ? latest : lap.date), laps[0]?.date ?? null);
+      return lastDate ? formatDateOnly(new Date(`${lastDate}T00:00:00Z`)) : '—';
+    })();
 ---
 <section class="space-y-6">
   <div class="space-y-4">
