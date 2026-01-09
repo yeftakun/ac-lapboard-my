@@ -37,7 +37,7 @@ if errorlevel 1 goto :error
 
 echo.
 echo Your web has been updated!
-echo Now github actions should run build workflow...
+echo If there are changes, GitHub Actions will run the build workflow next...
 set /p _="(Enter) "
 goto :eof
 
