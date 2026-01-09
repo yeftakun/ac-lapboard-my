@@ -40,15 +40,19 @@ To pull in the latest updates from this template repo run `update-from-template.
 ## Update your lap data
 <details>
 	<summary><b>Update manualy</b></summary>
-	1. Replace `data/personalbest.ini` with your latest lap data.
-	2. Commit and push the changes.
-	3. GitHub Actions will automatically rebuild and deploy your site.	
+	<ul>
+		<lo>Replace `data/personalbest.ini` with your latest lap data.</lo>
+		<lo>Commit and push the changes.</lo>
+		<lo>GitHub Actions will automatically rebuild and deploy your site.</lo>
+	</ul>	
 </details>
 <details>
 	<summary><b>Lap Updater (New)</b></summary>
-	1. Requires: `.NET 8`
-	2. [Download app](https://github.com/yeftakun/lap-updater/releases/download/1.0.0/LapUpdater-ns.zip)
-	3. Follow the instruction on the app.
+	<ul>
+		<lo>Requires: `.NET 8`</lo>
+		<lo>[Download app](https://github.com/yeftakun/lap-updater/releases/download/1.0.0/LapUpdater-ns.zip)</lo>
+		<lo>Follow the instruction on the app.</lo>
+	</ul>
 </details>
 
 
