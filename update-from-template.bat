@@ -2,7 +2,7 @@
 setlocal
 
 rem Ensure .gitattributes exists with merge rule for personalbest.ini
-echo [1/5] Preparing .gitattributes for locally-kept files...
+echo [1/6] Preparing .gitattributes for locally-kept files...
 if not exist .gitattributes (
   echo data/personalbest.ini merge=ours>.gitattributes
   echo src/data/config.json merge=ours>>.gitattributes
@@ -10,7 +10,7 @@ if not exist .gitattributes (
 )
 
 rem Add upstream remote if missing
-echo [2/5] Checking for remote "upstream"...
+echo [2/6] Checking for remote "upstream"...
 for /f "tokens=*" %%r in ('git remote') do (
   if /i "%%r"=="upstream" set HAS_UPSTREAM=1
 )
@@ -19,23 +19,24 @@ if not defined HAS_UPSTREAM (
   git remote add upstream https://github.com/yeftakun/ac-lapboard.git
 )
 
-echo [3/5] Waiting for confirmation before update...
+echo [3/6] Waiting for confirmation before update...
 set /p _="Need to update? (Enter) "
 
 rem Fetch and merge from upstream
-echo [4/5] Fetching changes from upstream...
+echo [4/6] Fetching changes from upstream...
 git fetch upstream
 if errorlevel 1 goto :error
 
-echo [5/5] Merging changes from upstream/master...
+echo [5/6] Merging changes from upstream/master...
 git merge upstream/master -m "update from template"
 if errorlevel 1 goto :error
 
-echo        Pushing merged changes to origin...
+echo [6/6] Pushing merged changes to origin...
 git push
 if errorlevel 1 goto :error
 
 echo Your web has been updated!
+echo Now github actions should run build workflow...
 set /p _="(Enter) "
 goto :eof
 
