@@ -1,22 +1,23 @@
 {
   "driverProfile": {
-    "name": "Your Name",
-    "gear": "wheel-pedal",
+    "name": "Shironeko",
+    "gear": "gamepad",
     "featuredLink": {
-      "label": "Your Label Name",
-      "url": "https://example.com"
+      "label": "Steam",
+      "url": "https://steamcommunity.com/id/shironeko64/"
     }
   },
   "featuredLap": {
     "show": true,
-    "track": "TRACK_NAME",
-    "car": "CAR_NAME",
-    "note": "Finally best laptime:)"
+    "track": "Monza",
+    "car": "mclaren 650 GT3",
+    "note": "Keknya lap GT3 terbaik dah..."
   },
   "meta": {
     "title": "Lap Board",
     "description": "My personal best lap times in Assetto Corsa.",
-    "siteUrl": "https://yeftakun.github.io/ac-lapboard/",
+    "siteUrl": "https://aclap.yeftaasyel.my.id/",
+    "base": "/",
     "image": "/og-image.png"
   }
 }
