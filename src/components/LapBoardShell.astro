@@ -45,13 +45,14 @@ const featuredLap = featuredConfig.show
   : null;
 
 const personalBestPath = path.resolve('data/personalbest.ini');
+const formatDateOnly = (dateLike) => new Intl.DateTimeFormat('en-US', { dateStyle: 'medium', timeZone: 'UTC' }).format(dateLike);
 const humanReadableLastDate = (() => {
   try {
     const stats = fs.statSync(personalBestPath);
-    return new Intl.DateTimeFormat('en-US', { dateStyle: 'medium' }).format(stats.mtime);
+    return formatDateOnly(stats.mtime);
   } catch {
     const lastDate = laps.reduce((latest, lap) => (latest > lap.date ? latest : lap.date), laps[0]?.date ?? null);
-    return lastDate ? new Intl.DateTimeFormat('en-US', { dateStyle: 'medium' }).format(new Date(lastDate)) : '—';
+    return lastDate ? formatDateOnly(new Date(`${lastDate}T00:00:00Z`)) : '—';
   }
 })();
 ---
