@@ -5,7 +5,7 @@ rem Ensure .gitattributes exists with merge rule for personalbest.ini
 if not exist .gitattributes (
   echo data/personalbest.ini merge=ours>.gitattributes
   echo src/data/config.json merge=ours>>.gitattributes
-  echo src/data/userprofiles.json merge=ours>>>.gitattributes
+  echo update-from-template.bat merge=ours>>.gitattributes
 )
 
 rem Add upstream remote if missing
