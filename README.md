@@ -71,9 +71,10 @@ To pull in the latest updates from this template repo run `update-from-template.
 
 ## Video
 YouTube video already dropped!
-<iframe width="560" height="315" src="https://www.youtube.com/embed/we6h3rqKdto?si=vSdtjlXFOz5-g5Ns" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/x_tdR8pqQYU?si=AW_70ZZLGwyPk33e" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+[Assetto Corsa Web Laptime Archive | GitHub Pages Deploy](https://youtu.be/we6h3rqKdto?si=Dr0Gce8JuYq5cX8V)
+
+[Lap Updater for Assetto Corsa Lap Archive | No Yap](https://youtu.be/x_tdR8pqQYU?si=Tb59H6niutRXcftF)
 
 ---
 
