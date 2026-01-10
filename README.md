@@ -49,9 +49,9 @@ To pull in the latest updates from this template repo run `update-from-template.
 <details>
 	<summary><b>Lap Updater (New)</b></summary>
 	<ol>
-		<li>Requires: `.NET 8`</li>
+		<li>Requires: .NET 8</li>
 		<li><a href="https://github.com/yeftakun/lap-updater/releases/download/1.0.0/LapUpdater-ns.zip">Download app</a></li>
-		<li>Follow the instruction on the app.</li>
+		<li>Run and follow the instruction on the app.</li>
 	</ol>
 </details>
 
