@@ -91,8 +91,14 @@ YouTube video already dropped!
 </details>
 
 <details>
-	<summary><b>Q: Do I need to pay for hosting or tools?</b></summary>
-	A: Not at all. Everything used here is free, and GitHub Pages hosts your site for $0.
+    <summary><b>Q: Do I need to pay for hosting or tools?</b></summary>
+    A: For a <b>public</b> repo, GitHub Pages hosting is $0, and deploying via GitHub Actions is typically not billed. Costs may apply for <b>private</b> repos or if you exceed GitHub’s included quotas.
+    <br /><br />
+    <b>Official GitHub docs:</b>
+    <ul>
+        <li><a href="https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages">About GitHub Pages</a></li>
+        <li><a href="https://docs.github.com/en/billing/managing-billing-for-your-products/managing-billing-for-github-actions/about-billing-for-github-actions">About billing for GitHub Actions</a></li>
+    </ul>
 </details>
 
 <details>
