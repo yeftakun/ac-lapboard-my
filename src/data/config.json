@@ -1,9 +1,9 @@
 ﻿{
   "driverProfile": {
     "name": "Shironeko",
-    "gear": "wheel-pedal",
+    "gear": "gamepad",
     "featuredLink": {
-      "label": "mabar?",
+      "label": "Steam",
       "url": "https://steamcommunity.com/id/shironeko64/"
     }
   },
@@ -15,7 +15,7 @@
   },
   "meta": {
     "title": "Lap Archive",
-    "description": "My personal best lap times in Assetto Corsa.",
+    "description": "My best lap times in Assetto Corsa",
     "siteUrl": "https://aclap.yeftaasyel.my.id/",
     "base": "/",
     "image": "/og-image.png"
