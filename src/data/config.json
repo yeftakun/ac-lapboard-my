@@ -1,9 +1,9 @@
-{
+﻿{
   "driverProfile": {
     "name": "Shironeko",
-    "gear": "gamepad",
+    "gear": "wheel-pedal",
     "featuredLink": {
-      "label": "Steam",
+      "label": "mabar?",
       "url": "https://steamcommunity.com/id/shironeko64/"
     }
   },
@@ -14,7 +14,7 @@
     "note": "Keknya lap GT3 terbaik dah..."
   },
   "meta": {
-    "title": "Lap Board",
+    "title": "Lap Archive",
     "description": "My personal best lap times in Assetto Corsa.",
     "siteUrl": "https://aclap.yeftaasyel.my.id/",
     "base": "/",
