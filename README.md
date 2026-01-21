@@ -1,7 +1,9 @@
 # Assetto Corsa Lap Board
 
+<img width="1280" height="340" alt="3639675974_preview_workflow" src="https://github.com/user-attachments/assets/52653a9f-51bf-4bed-940b-6aa35b7f0589" />
+
 ## What is this?
-A lightweight Astro + React template that converts `personalbest.ini` into JSON at build time, so the published page always serves the latest lap data without any runtime fetch.
+A public lap archive site for Assetto Corsa that reads straight from `personalbest.ini`. Just drive and break records, then use the included LapUpdater tool to push the changes. GitHub Actions will automatically process the data and update your site instantly
 
 ## Use it as a template
 **Requirements:**
