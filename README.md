@@ -121,6 +121,5 @@ YouTube video already dropped!
 	A: Nope. Since it reads from a simple text file, the numbers can be easily manipulated. But I trust you guys to keep it real... right? ...Right?
 </details>
 
-
 ---
 That’s it — swap the data, tweak config, and you’ve got a self-hosted Assetto Corsa lap archive. 
