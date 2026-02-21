@@ -1,9 +1,6 @@
 node_modules/
 dist/
 scripts/check-mtime.mjs
-src/data/laptime.json
-src/data/old_laptime.json
-src/data/temp_laptime.json
 
 # Build caches and deployment artifacts
 .astro/
