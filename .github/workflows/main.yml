@@ -38,9 +38,12 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          if git status --porcelain | grep .; then
-            git add data/laptime.json data/old_laptime.json data/temp_laptime.json || true
-            git commit -m "chore: update lap times"
+
+          # add hanya file yang memang berubah, hindari fatal pathspec
+          changes=$(git status --porcelain | awk '{print $2}')
+          if [ -n "$changes" ]; then
+            echo "$changes" | xargs -r git add
+            git commit -m "chore: update lap times" || true
             git push
           fi
 
