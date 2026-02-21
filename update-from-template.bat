@@ -28,7 +28,7 @@ echo [3/6] Waiting for confirmation before update...
 set /p _="Need to update? (Enter) "
 
 echo Get updating repository...
-git pull --rebase origin master
+git pull
 if errorlevel 1 goto :error
 
 echo [4/6] Fetching changes from upstream...
@@ -40,7 +40,7 @@ git merge upstream/master -m "update from template"
 if errorlevel 1 goto :error
 
 echo [5.5/6] Rebase local onto origin/master...
-git pull --rebase origin master
+git pull
 if errorlevel 1 goto :error
 
 echo [6/6] Pushing merged changes to origin...
