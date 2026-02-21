@@ -24,7 +24,7 @@
     "laptime_ms": 110260,
     "laptime_display": "1:50.260",
     "old_ms": -10,
-    "old_display": "-0:00.010"
+    "old_display": "-0.010"
   },
   {
     "car": "Porsche 911 GT1",
@@ -33,7 +33,7 @@
     "laptime_ms": 231200,
     "laptime_display": "3:51.200",
     "old_ms": -1020,
-    "old_display": "-0:01.020"
+    "old_display": "-1.020"
   },
   {
     "car": "Porsche 935 78 Moby Dick",
