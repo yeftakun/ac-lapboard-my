@@ -38,7 +38,17 @@ function formatLap(ms) {
 function formatDelta(ms) {
   if (!Number.isFinite(ms)) return null;
   const sign = ms > 0 ? '+' : ms < 0 ? '-' : '';
-  return `${sign}${formatLap(Math.abs(ms))}`;
+  const absMs = Math.abs(ms);
+  const minutes = Math.floor(absMs / 60000);
+  const remainingMs = absMs % 60000;
+  const seconds = Math.floor(remainingMs / 1000);
+  const millis = remainingMs % 1000;
+
+  if (minutes === 0) {
+    return `${sign}${seconds}.${String(millis).padStart(3, '0')}`;
+  }
+
+  return `${sign}${minutes}:${String(seconds).padStart(2, '0')}.${String(millis).padStart(3, '0')}`;
 }
 
 function keyOf(lap) {
