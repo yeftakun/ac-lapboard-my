@@ -7,6 +7,10 @@ if not exist .gitattributes (
   rem when you have local preference changes, keep them from being overwritten by add them to .gitattributes
   echo data/personalbest.ini merge=ours>.gitattributes
   echo src/data/config.json merge=ours>>.gitattributes
+  echo src/data/meta.json merge=ours>>.gitattributes
+  echo src/data/laptime.json merge=ours>>.gitattributes
+  echo src/data/old_laptime.json merge=ours>>.gitattributes
+  echo src/data/temp_laptime.json merge=ours>>.gitattributes
   echo update-from-template.bat merge=ours>>.gitattributes
   echo README.md merge=ours>>.gitattributes
 )
@@ -37,6 +41,10 @@ if errorlevel 1 goto :error
 
 echo [6/6] Pushing merged changes to origin...
 git push --force-with-lease
+if errorlevel 1 goto :error
+
+echo Get update repo...
+git pull
 if errorlevel 1 goto :error
 
 echo.
