@@ -27,6 +27,10 @@ if not defined HAS_UPSTREAM (
 echo [3/6] Waiting for confirmation before update...
 set /p _="Need to update? (Enter) "
 
+echo Get updating repository...
+git pull --rebase origin master
+if errorlevel 1 goto :error
+
 echo [4/6] Fetching changes from upstream...
 git fetch upstream
 if errorlevel 1 goto :error
@@ -41,10 +45,6 @@ if errorlevel 1 goto :error
 
 echo [6/6] Pushing merged changes to origin...
 git push --force-with-lease
-if errorlevel 1 goto :error
-
-echo Get update repo...
-git pull
 if errorlevel 1 goto :error
 
 echo.
