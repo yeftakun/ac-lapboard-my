@@ -33,6 +33,9 @@ if errorlevel 1 goto :error
 
 echo [4/6] Fetching changes from upstream...
 git fetch upstream
+git add .
+git commit -m "."
+git pull
 if errorlevel 1 goto :error
 
 echo [5/6] Merging changes from upstream/master...
