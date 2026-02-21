@@ -31,8 +31,12 @@ echo [5/6] Merging changes from upstream/master...
 git merge upstream/master -m "update from template"
 if errorlevel 1 goto :error
 
+echo [5.5/6] Rebase local onto origin/master...
+git pull --rebase origin master
+if errorlevel 1 goto :error
+
 echo [6/6] Pushing merged changes to origin...
-git push
+git push --force-with-lease
 if errorlevel 1 goto :error
 
 echo.
