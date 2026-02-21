@@ -21,19 +21,19 @@
     "car": "Ferrari Sf70h",
     "track": "SPA",
     "date": "2025-12-30",
-    "laptime_ms": 110200,
-    "laptime_display": "1:50.200",
-    "old_ms": null,
-    "old_display": null
+    "laptime_ms": 110140,
+    "laptime_display": "1:50.140",
+    "old_ms": -60,
+    "old_display": "-0.060"
   },
   {
     "car": "Porsche 911 GT1",
     "track": "Lemans 2017 NO Lights",
     "date": "2025-12-30",
-    "laptime_ms": 231100,
-    "laptime_display": "3:51.100",
-    "old_ms": null,
-    "old_display": null
+    "laptime_ms": 231022,
+    "laptime_display": "3:51.022",
+    "old_ms": -78,
+    "old_display": "-0.078"
   },
   {
     "car": "Porsche 935 78 Moby Dick",
