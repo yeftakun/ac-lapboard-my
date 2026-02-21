@@ -57,7 +57,6 @@ To pull in the latest updates from this template repo run `update-from-template.
 	</ol>
 </details>
 
-
 ## Preview on local
 **Requirements:**
 - Node.js v18+
