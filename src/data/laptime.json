@@ -407,11 +407,11 @@
   {
     "car": "Porsche 911 RSR 2017",
     "track": "Nordschleife Nordschleife",
-    "date": "2025-05-18",
-    "laptime_ms": 432464,
-    "laptime_display": "7:12.464",
-    "old_ms": null,
-    "old_display": null
+    "date": "2026-01-24",
+    "laptime_ms": 397524,
+    "laptime_display": "6:37.524",
+    "old_ms": -34940,
+    "old_display": "-34.940"
   },
   {
     "car": "Porsche 911 RSR 2017",
@@ -551,20 +551,20 @@
   {
     "car": "Porsche 919 Hybrid EVO 2018",
     "track": "Nordschleife Nordschleife",
-    "date": "2025-08-21",
-    "laptime_ms": 329640,
-    "laptime_display": "5:29.640",
-    "old_ms": null,
-    "old_display": null
+    "date": "2026-02-06",
+    "laptime_ms": 301060,
+    "laptime_display": "5:01.060",
+    "old_ms": -28580,
+    "old_display": "-28.580"
   },
   {
     "car": "Porsche 919 Hybrid EVO 2018",
     "track": "SPA",
-    "date": "2025-09-05",
-    "laptime_ms": 116843,
-    "laptime_display": "1:56.843",
-    "old_ms": null,
-    "old_display": null
+    "date": "2026-02-08",
+    "laptime_ms": 102495,
+    "laptime_display": "1:42.495",
+    "old_ms": -14348,
+    "old_display": "-14.348"
   },
   {
     "car": "LM Hypercar Valkyrie",
@@ -677,11 +677,11 @@
   {
     "car": "Lotus Exige 240 S3",
     "track": "Silverstone National",
-    "date": "2025-09-17",
-    "laptime_ms": 66285,
-    "laptime_display": "1:06.285",
-    "old_ms": null,
-    "old_display": null
+    "date": "2026-01-26",
+    "laptime_ms": 65853,
+    "laptime_display": "1:05.853",
+    "old_ms": -432,
+    "old_display": "-0.432"
   },
   {
     "car": "Porsche 911 RSR 2017",
@@ -758,11 +758,11 @@
   {
     "car": "Mercedes AMG GT3",
     "track": "Nordschleife Nordschleife",
-    "date": "2025-10-17",
-    "laptime_ms": 417715,
-    "laptime_display": "6:57.715",
-    "old_ms": null,
-    "old_display": null
+    "date": "2026-02-22",
+    "laptime_ms": 407486,
+    "laptime_display": "6:47.486",
+    "old_ms": -10229,
+    "old_display": "-10.229"
   },
   {
     "car": "Ferrari 488 GT3",
@@ -830,11 +830,11 @@
   {
     "car": "TRR Ferrari 296 GT3",
     "track": "Nordschleife Nordschleife",
-    "date": "2025-11-13",
-    "laptime_ms": 424899,
-    "laptime_display": "7:04.899",
-    "old_ms": null,
-    "old_display": null
+    "date": "2026-01-24",
+    "laptime_ms": 408624,
+    "laptime_display": "6:48.624",
+    "old_ms": -16275,
+    "old_display": "-16.275"
   },
   {
     "car": "Mercedes AMG GT3",
@@ -1094,6 +1094,132 @@
     "date": "2026-01-14",
     "laptime_ms": 230103,
     "laptime_display": "3:50.103",
+    "old_ms": null,
+    "old_display": null
+  },
+  {
+    "car": "Porsche 919 Hybrid 2016",
+    "track": "Nordschleife Nordschleife",
+    "date": "2026-01-19",
+    "laptime_ms": 352497,
+    "laptime_display": "5:52.497",
+    "old_ms": null,
+    "old_display": null
+  },
+  {
+    "car": "Audi R8 LMS",
+    "track": "Nordschleife Nordschleife",
+    "date": "2026-01-20",
+    "laptime_ms": 406227,
+    "laptime_display": "6:46.227",
+    "old_ms": null,
+    "old_display": null
+  },
+  {
+    "car": "Ferrari 499p",
+    "track": "SPA",
+    "date": "2026-01-25",
+    "laptime_ms": 117827,
+    "laptime_display": "1:57.827",
+    "old_ms": null,
+    "old_display": null
+  },
+  {
+    "car": "Porsche 963",
+    "track": "RT Daytona Layout Imsa 2024",
+    "date": "2026-01-25",
+    "laptime_ms": 104852,
+    "laptime_display": "1:44.852",
+    "old_ms": null,
+    "old_display": null
+  },
+  {
+    "car": "Porsche 917 K",
+    "track": "RJ Lemans 1967 Lm54",
+    "date": "2026-01-25",
+    "laptime_ms": 199385,
+    "laptime_display": "3:19.385",
+    "old_ms": null,
+    "old_display": null
+  },
+  {
+    "car": "Tatuusfa1",
+    "track": "Nordschleife Nordschleife",
+    "date": "2026-01-27",
+    "laptime_ms": 414920,
+    "laptime_display": "6:54.920",
+    "old_ms": null,
+    "old_display": null
+  },
+  {
+    "car": "Lotus Evora S S2",
+    "track": "Silverstone International",
+    "date": "2026-01-26",
+    "laptime_ms": 79572,
+    "laptime_display": "1:19.572",
+    "old_ms": null,
+    "old_display": null
+  },
+  {
+    "car": "Toyota Gt86",
+    "track": "Magione",
+    "date": "2026-02-01",
+    "laptime_ms": 144123,
+    "laptime_display": "2:24.123",
+    "old_ms": null,
+    "old_display": null
+  },
+  {
+    "car": "GUE Porsche 911 GT3 CUP 992",
+    "track": "Nordschleife Nordschleife",
+    "date": "2026-02-03",
+    "laptime_ms": 425415,
+    "laptime_display": "7:05.415",
+    "old_ms": null,
+    "old_display": null
+  },
+  {
+    "car": "BMW M235i Racing",
+    "track": "Nordschleife Nordschleife",
+    "date": "2026-02-03",
+    "laptime_ms": 470979,
+    "laptime_display": "7:50.979",
+    "old_ms": null,
+    "old_display": null
+  },
+  {
+    "car": "GP 2025 Fw47",
+    "track": "SPA",
+    "date": "2026-02-03",
+    "laptime_ms": 103323,
+    "laptime_display": "1:43.323",
+    "old_ms": null,
+    "old_display": null
+  },
+  {
+    "car": "Corvette C7R",
+    "track": "Nordschleife Nordschleife",
+    "date": "2026-02-12",
+    "laptime_ms": 403351,
+    "laptime_display": "6:43.351",
+    "old_ms": null,
+    "old_display": null
+  },
+  {
+    "car": "Mercedes AMG GT3",
+    "track": "RT Bathurst",
+    "date": "2026-02-17",
+    "laptime_ms": 126069,
+    "laptime_display": "2:06.069",
+    "old_ms": null,
+    "old_display": null
+  },
+  {
+    "car": "Mclaren 650 GT3",
+    "track": "RT Bathurst",
+    "date": "2026-02-18",
+    "laptime_ms": 129450,
+    "laptime_display": "2:09.450",
     "old_ms": null,
     "old_display": null
   }
