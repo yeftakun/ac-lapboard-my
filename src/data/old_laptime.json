@@ -1,1 +1,44 @@
-[]
+[
+  {
+    "car": "Porsche 911 RSR 2017",
+    "track": "Nordschleife Nordschleife",
+    "date": "2025-05-18",
+    "laptime_ms": 432464,
+    "laptime_display": "7:12.464"
+  },
+  {
+    "car": "Porsche 919 Hybrid EVO 2018",
+    "track": "Nordschleife Nordschleife",
+    "date": "2025-08-21",
+    "laptime_ms": 329640,
+    "laptime_display": "5:29.640"
+  },
+  {
+    "car": "Porsche 919 Hybrid EVO 2018",
+    "track": "SPA",
+    "date": "2025-09-05",
+    "laptime_ms": 116843,
+    "laptime_display": "1:56.843"
+  },
+  {
+    "car": "Lotus Exige 240 S3",
+    "track": "Silverstone National",
+    "date": "2025-09-17",
+    "laptime_ms": 66285,
+    "laptime_display": "1:06.285"
+  },
+  {
+    "car": "Mercedes AMG GT3",
+    "track": "Nordschleife Nordschleife",
+    "date": "2025-10-17",
+    "laptime_ms": 417715,
+    "laptime_display": "6:57.715"
+  },
+  {
+    "car": "TRR Ferrari 296 GT3",
+    "track": "Nordschleife Nordschleife",
+    "date": "2025-11-13",
+    "laptime_ms": 424899,
+    "laptime_display": "7:04.899"
+  }
+]
