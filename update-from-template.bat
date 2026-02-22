@@ -7,10 +7,10 @@ if not exist .gitattributes (
   rem when you have local preference changes, keep them from being overwritten by add them to .gitattributes
   echo data/personalbest.ini merge=ours>.gitattributes
   echo src/data/config.json merge=ours>>.gitattributes
-  echo src/data/meta.json merge=ours>>.gitattributes
   echo src/data/laptime.json merge=ours>>.gitattributes
-  echo src/data/old_laptime.json merge=ours>>.gitattributes
   echo src/data/temp_laptime.json merge=ours>>.gitattributes
+  echo src/data/old_laptime.json merge=ours>>.gitattributes
+  echo src/data/meta.json merge=ours>>.gitattributes
   echo update-from-template.bat merge=ours>>.gitattributes
   echo README.md merge=ours>>.gitattributes
 )
@@ -27,27 +27,16 @@ if not defined HAS_UPSTREAM (
 echo [3/6] Waiting for confirmation before update...
 set /p _="Need to update? (Enter) "
 
-echo Get updating repository...
-git pull
-if errorlevel 1 goto :error
-
 echo [4/6] Fetching changes from upstream...
 git fetch upstream
-git add .
-git commit -m "."
-git pull
 if errorlevel 1 goto :error
 
 echo [5/6] Merging changes from upstream/master...
 git merge upstream/master -m "update from template"
 if errorlevel 1 goto :error
 
-echo [5.5/6] Rebase local onto origin/master...
-git pull
-if errorlevel 1 goto :error
-
 echo [6/6] Pushing merged changes to origin...
-git push --force-with-lease
+git push
 if errorlevel 1 goto :error
 
 echo.
