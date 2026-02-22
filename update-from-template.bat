@@ -1,48 +1,60 @@
 @echo off
 setlocal enabledelayedexpansion
 
-echo [0/7] Cleaning stale rebase/merge state...
+echo [0/8] Cleaning stale rebase/merge state...
 if exist ".git\rebase-merge" git rebase --abort >nul 2>&1
 if exist ".git\MERGE_HEAD" git merge --abort >nul 2>&1
 
-echo [1/7] Ensuring .gitattributes merge rules...
+echo [1/8] Ensuring .gitattributes merge rules...
 if not exist .gitattributes type nul > .gitattributes
 for %%L in (
+  "update-from-template.bat merge=ours"
   "src/data/meta.json merge=ours"
   "src/data/laptime.json merge=ours"
   "src/data/temp_laptime.json merge=ours"
   "src/data/old_laptime.json merge=ours"
   "data/personalbest.ini merge=ours"
   "README.md merge=ours"
-  "update-from-template.bat merge=ours"
 ) do (
   findstr /C:"%%~L" .gitattributes >nul || echo %%~L>>.gitattributes
 )
 
-echo [2/7] Checking for remote ""upstream""...
+echo [2/8] Committing .gitattributes if changed...
+git status --porcelain .gitattributes | findstr /r ".*" >nul && (
+  git add .
+  git commit -m "chore: ensure gitattributes merge rules" >nul 2>&1
+)
+
+echo [3/8] Checking for remote "upstream"...
 set HAS_UPSTREAM=
 for /f "tokens=1" %%r in ('git remote') do if /i "%%r"=="upstream" set HAS_UPSTREAM=1
 if not defined HAS_UPSTREAM (
-  echo        Adding remote upstream...
   git remote add upstream https://github.com/yeftakun/ac-lapboard.git || goto :error
 )
 
-echo [3/7] Fetching changes from upstream and origin...
+echo [4/8] Fetching changes from upstream and origin...
 git fetch upstream || goto :error
 git fetch origin || goto :error
 
-echo [5/8] Merging changes from upstream/master...
-rem Pakai -X ours sebagai fallback agar tidak stop di konflik
-git merge -X ours upstream/master -m "update from template"
-if errorlevel 1 goto :error
+echo [5/8] Merging upstream/master (preferring ours on conflicts)...
+git merge -X ours upstream/master -m "update from template" || goto :error
 
-echo [5/7] Merging origin/master (preferring ours on conflicts)...
+echo [5.5/8] Restoring local versions for data files...
+git checkout --ours ^
+  src/data/laptime.json ^
+  src/data/temp_laptime.json ^
+  src/data/old_laptime.json ^
+  src/data/meta.json ^
+  data/personalbest.ini
+git add src/data/laptime.json src/data/temp_laptime.json src/data/old_laptime.json src/data/meta.json data/personalbest.ini
+
+echo [6/8] Merging origin/master (preferring ours on conflicts)...
 git merge -X ours origin/master -m "sync with origin" || goto :error
 
-echo [6/7] Showing status...
+echo [7/8] Showing status...
 git status -sb
 
-echo [7/7] Pushing to origin if ahead...
+echo [8/8] Pushing to origin if ahead...
 git push --force-with-lease || goto :error
 
 echo(
