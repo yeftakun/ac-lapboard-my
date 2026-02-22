@@ -1,1 +1,7 @@
 data/personalbest.ini merge=ours
+src/data/meta.json merge=ours
+src/data/laptime.json merge=ours
+src/data/temp_laptime.json merge=ours
+src/data/old_laptime.json merge=ours
+README.md merge=ours
+update-from-template.bat merge=ours
