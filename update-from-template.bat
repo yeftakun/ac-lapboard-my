@@ -1,41 +1,51 @@
 @echo off
-setlocal
+setlocal enabledelayedexpansion
 
-rem Ensure .gitattributes exists with merge rule for personalbest.ini
-echo [1/6] Preparing .gitattributes for locally-kept files...
-if not exist .gitattributes (
-  rem when you have local preference changes, keep them from being overwritten by add them to .gitattributes
-  echo data/personalbest.ini merge=ours>.gitattributes
-  echo src/data/config.json merge=ours>>.gitattributes
-  echo update-from-template.bat merge=ours>>.gitattributes
-  echo README.md merge=ours>>.gitattributes
+echo [0/7] Cleaning stale rebase/merge state...
+if exist ".git\rebase-merge" git rebase --abort >nul 2>&1
+if exist ".git\MERGE_HEAD" git merge --abort >nul 2>&1
+
+echo [1/7] Ensuring .gitattributes merge rules...
+if not exist .gitattributes type nul > .gitattributes
+for %%L in (
+  "src/data/meta.json merge=ours"
+  "src/data/laptime.json merge=ours"
+  "src/data/temp_laptime.json merge=ours"
+  "src/data/old_laptime.json merge=ours"
+  "data/personalbest.ini merge=ours"
+  "README.md merge=ours"
+  "update-from-template.bat merge=ours"
+) do (
+  findstr /C:"%%~L" .gitattributes >nul || echo %%~L>>.gitattributes
 )
 
-echo [2/6] Checking for remote "upstream"...
-for /f "tokens=*" %%r in ('git remote') do (
-  if /i "%%r"=="upstream" set HAS_UPSTREAM=1
-)
+echo [2/7] Checking for remote ""upstream""...
+set HAS_UPSTREAM=
+for /f "tokens=1" %%r in ('git remote') do if /i "%%r"=="upstream" set HAS_UPSTREAM=1
 if not defined HAS_UPSTREAM (
   echo        Adding remote upstream...
-  git remote add upstream https://github.com/yeftakun/ac-lapboard.git
+  git remote add upstream https://github.com/yeftakun/ac-lapboard.git || goto :error
 )
 
-echo [3/6] Waiting for confirmation before update...
-set /p _="Need to update? (Enter) "
+echo [3/7] Fetching changes from upstream and origin...
+git fetch upstream || goto :error
+git fetch origin || goto :error
 
-echo [4/6] Fetching changes from upstream...
-git fetch upstream
+echo [5/8] Merging changes from upstream/master...
+rem Pakai -X ours sebagai fallback agar tidak stop di konflik
+git merge -X ours upstream/master -m "update from template"
 if errorlevel 1 goto :error
 
-echo [5/6] Merging changes from upstream/master...
-git merge upstream/master -m "update from template"
-if errorlevel 1 goto :error
+echo [5/7] Merging origin/master (preferring ours on conflicts)...
+git merge -X ours origin/master -m "sync with origin" || goto :error
 
-echo [6/6] Pushing merged changes to origin...
-git push
-if errorlevel 1 goto :error
+echo [6/7] Showing status...
+git status -sb
 
-echo.
+echo [7/7] Pushing to origin if ahead...
+git push --force-with-lease || goto :error
+
+echo(
 echo Your web has been updated!
 echo If there are changes, GitHub Actions will run the build workflow next...
 set /p _="(Enter) "
