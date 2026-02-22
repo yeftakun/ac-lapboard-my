@@ -31,8 +31,10 @@ echo [3/7] Fetching changes from upstream and origin...
 git fetch upstream || goto :error
 git fetch origin || goto :error
 
-echo [4/7] Merging upstream/master (preferring ours on conflicts)...
-git merge -X ours upstream/master -m "update from template" || goto :error
+echo [5/8] Merging changes from upstream/master...
+rem Pakai -X ours sebagai fallback agar tidak stop di konflik
+git merge -X ours upstream/master -m "update from template"
+if errorlevel 1 goto :error
 
 echo [5/7] Merging origin/master (preferring ours on conflicts)...
 git merge -X ours origin/master -m "sync with origin" || goto :error
@@ -43,7 +45,7 @@ git status -sb
 echo [7/7] Pushing to origin if ahead...
 git push --force-with-lease || goto :error
 
-echo.
+echo(
 echo Your web has been updated!
 echo If there are changes, GitHub Actions will run the build workflow next...
 set /p _="(Enter) "
