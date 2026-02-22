@@ -51,7 +51,7 @@ echo [8/8] Pushing merged changes to origin...
 git push --force-with-lease
 if errorlevel 1 goto :error
 
-echo(
+echo
 echo Your web has been updated!
 echo If there are changes, GitHub Actions will run the build workflow next...
 set /p _="(Enter) "
