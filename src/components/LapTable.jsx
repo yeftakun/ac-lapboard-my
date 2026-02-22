@@ -14,8 +14,18 @@ const SORTABLE_FIELDS = [
   { key: 'track', label: 'Track' },
   { key: 'car', label: 'Car' },
   { key: 'laptime_ms', label: 'Lap' },
+  { key: 'old_ms', label: 'Δ Lap' },
   { key: 'date', label: 'Date' },
 ];
+
+function formatLap(ms) {
+  if (!Number.isFinite(ms)) return null;
+  const totalSeconds = Math.floor(ms / 1000);
+  const minutes = Math.floor(totalSeconds / 60);
+  const seconds = totalSeconds % 60;
+  const millis = ms % 1000;
+  return `${minutes}:${String(seconds).padStart(2, '0')}.${String(millis).padStart(3, '0')}`;
+}
 
 export default function LapTable({ rows = [] }) {
   const [filters, setFilters] = useState({ track: '', car: '' });
@@ -119,13 +129,24 @@ export default function LapTable({ rows = [] }) {
             <tbody>
               {sorted.length === 0 ? (
                 <tr>
-                  <td colSpan={4} className="py-8 text-center text-sm text-[var(--muted)]">
+                  <td colSpan={SORTABLE_FIELDS.length} className="py-8 text-center text-sm text-[var(--muted)]">
                     Nothing matches your filter.
                   </td>
                 </tr>
               ) : (
                 sorted.map((row, index) => {
                   const isPb = pbByTrack.get(row.track)?.laptime_ms === row.laptime_ms;
+                  const deltaMs = Number(row.old_ms);
+                  const hasDelta = Number.isFinite(deltaMs);
+                  const deltaDisplay = hasDelta ? row.old_display : '—';
+                  const prevLapDisplay = hasDelta ? formatLap(row.laptime_ms - deltaMs) : null;
+                  const deltaTone = hasDelta
+                    ? deltaMs < 0
+                      ? 'delta-better'
+                      : deltaMs > 0
+                        ? 'delta-worse'
+                        : 'delta-even'
+                    : 'delta-unknown';
                   return (
                     <tr key={`${row.track}-${row.car}-${row.date}-${index}`}>
                       <td className="font-medium">
@@ -141,6 +162,18 @@ export default function LapTable({ rows = [] }) {
                           <span className="badge-pb ml-3" data-tooltip="Fastest lap on this track">
                             BL
                           </span>
+                        )}
+                      </td>
+                      <td className="tabular-nums text-sm">
+                        {hasDelta ? (
+                          <span
+                            className={`delta-text ${deltaTone}`}
+                            data-tooltip={prevLapDisplay ? `Prev: ${prevLapDisplay}` : undefined}
+                          >
+                            {deltaDisplay}
+                          </span>
+                        ) : (
+                          <span className="text-[var(--muted)]">—</span>
                         )}
                       </td>
                       <td>{row.date}</td>
