@@ -122,4 +122,4 @@ YouTube video already dropped!
 </details>
 
 ---
-That’s it — swap the data, tweak config, and you’ve got a self-hosted Assetto Corsa lap archive. 
+That’s it — swap the data, tweak config, and you’ve got a self-hosted Assetto Corsa lap archive.
