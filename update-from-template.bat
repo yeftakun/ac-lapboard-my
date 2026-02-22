@@ -21,7 +21,7 @@ for %%L in (
 
 echo [2/8] Committing .gitattributes if changed...
 git status --porcelain .gitattributes | findstr /r ".*" >nul && (
-  git add .
+  git add .gitattributes
   git commit -m "chore: ensure gitattributes merge rules" >nul 2>&1
 )
 
@@ -35,25 +35,11 @@ if not defined HAS_UPSTREAM (
 echo [4/8] Fetching changes from upstream and origin...
 git fetch upstream || goto :error
 git fetch origin || goto :error
-
-:: simpan commit sebelum merge untuk restore file data
-for /f "delims=" %%H in ('git rev-parse HEAD') do set PRE_MERGE=%%H
+git add . || goto :error
+git commit -m "chore: prepare for update from template" || goto :error
 
 echo [5/8] Merging upstream/master (preferring ours on conflicts)...
 git merge -X ours upstream/master -m "update from template" || goto :error
-
-echo [5.5/8] Keeping local versions for data files...
-for %%F in (
-  src/data/laptime.json
-  src/data/temp_laptime.json
-  src/data/old_laptime.json
-  src/data/meta.json
-  data/personalbest.ini
-) do (
-  git checkout --ours -- "%%F" 2>nul
-)
-git rm -f --ignore-unmatch src/data/temp_laptime.json src/data/old_laptime.json
-git add src/data/laptime.json src/data/temp_laptime.json src/data/old_laptime.json src/data/meta.json data/personalbest.ini
 
 echo [6/8] Merging origin/master (preferring ours on conflicts)...
 git merge -X ours origin/master -m "sync with origin" || goto :error
