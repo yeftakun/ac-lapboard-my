@@ -1013,8 +1013,8 @@
     "date": "2025-12-28",
     "laptime_ms": 208474,
     "laptime_display": "3:28.474",
-    "old_ms": 4,
-    "old_display": "+0.004"
+    "old_ms": null,
+    "old_display": null
   },
   {
     "car": "Ferrari Sf70h",
@@ -1022,8 +1022,8 @@
     "date": "2025-12-30",
     "laptime_ms": 110281,
     "laptime_display": "1:50.281",
-    "old_ms": 201,
-    "old_display": "+0.201"
+    "old_ms": null,
+    "old_display": null
   },
   {
     "car": "Porsche 911 GT1",
@@ -1031,8 +1031,8 @@
     "date": "2025-12-30",
     "laptime_ms": 232220,
     "laptime_display": "3:52.220",
-    "old_ms": 1198,
-    "old_display": "+1.198"
+    "old_ms": null,
+    "old_display": null
   },
   {
     "car": "Porsche 935 78 Moby Dick",
