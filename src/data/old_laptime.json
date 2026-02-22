@@ -1,26 +1,5 @@
 [
   {
-    "car": "Ferrari Sf70h",
-    "track": "SPA",
-    "date": "2025-12-30",
-    "laptime_ms": 110080,
-    "laptime_display": "1:50.080"
-  },
-  {
-    "car": "Porsche 911 GT1",
-    "track": "Lemans 2017 NO Lights",
-    "date": "2025-12-30",
-    "laptime_ms": 231022,
-    "laptime_display": "3:51.022"
-  },
-  {
-    "car": "Porsche 963",
-    "track": "Lemans 2017 NO Lights",
-    "date": "2025-12-28",
-    "laptime_ms": 208470,
-    "laptime_display": "3:28.470"
-  },
-  {
     "car": "Mercedes AMG GT3",
     "track": "Nordschleife Nordschleife",
     "date": "2025-10-17",
