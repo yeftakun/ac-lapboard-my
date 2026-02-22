@@ -1,29 +1,29 @@
 @echo off
-setlocal
+setlocal enabledelayedexpansion
+
+echo [0/8] Cleaning stale rebase/merge state...
+if exist ".git\rebase-merge" git rebase --abort >nul 2>&1
+if exist ".git\MERGE_HEAD" git merge --abort >nul 2>&1
 
 echo [1/8] Ensuring .gitattributes merge rules...
-if not exist .gitattributes (
-  type nul > .gitattributes
+if not exist .gitattributes type nul > .gitattributes
+for %%L in (
+  "src/data/meta.json merge=ours"
+  "src/data/laptime.json merge=ours"
+  "src/data/temp_laptime.json merge=ours"
+  "src/data/old_laptime.json merge=ours"
+  "data/personalbest.ini merge=ours"
+  "update-from-template.bat merge=ours"
+  "README.md merge=ours"
+) do (
+  for /f "delims=" %%X in ("%%~L") do (
+    findstr /C:"%%~L" .gitattributes >nul || echo %%~L>>.gitattributes
+  )
 )
-findstr /C:"src/data/meta.json merge=ours" .gitattributes >nul || ^
-  echo src/data/meta.json merge=ours>>.gitattributes
-findstr /C:"src/data/laptime.json merge=ours" .gitattributes >nul || ^
-  echo src/data/laptime.json merge=ours>>.gitattributes
-findstr /C:"src/data/temp_laptime.json merge=ours" .gitattributes >nul || ^
-  echo src/data/temp_laptime.json merge=ours>>.gitattributes
-findstr /C:"src/data/old_laptime.json merge=ours" .gitattributes >nul || ^
-  echo src/data/old_laptime.json merge=ours>>.gitattributes
-findstr /C:"data/personalbest.ini merge=ours" .gitattributes >nul || ^
-  echo data/personalbest.ini merge=ours>>.gitattributes
-findstr /C:"update-from-template.bat merge=ours" .gitattributes >nul || ^
-  echo update-from-template.bat merge=ours>>.gitattributes
-findstr /C:"README.md merge=ours" .gitattributes >nul || ^
-  echo README.md merge=ours>>.gitattributes
 
 echo [2/8] Checking for remote "upstream"...
-for /f "tokens=*" %%r in ('git remote') do (
-  if /i "%%r"=="upstream" set HAS_UPSTREAM=1
-)
+set HAS_UPSTREAM=
+for /f "tokens=1" %%r in ('git remote') do if /i "%%r"=="upstream" set HAS_UPSTREAM=1
 if not defined HAS_UPSTREAM (
   echo        Adding remote upstream...
   git remote add upstream https://github.com/yeftakun/ac-lapboard.git || goto :error
@@ -51,7 +51,7 @@ echo [8/8] Pushing merged changes to origin...
 git push --force-with-lease
 if errorlevel 1 goto :error
 
-echo.
+echo(
 echo Your web has been updated!
 echo If there are changes, GitHub Actions will run the build workflow next...
 set /p _="(Enter) "
