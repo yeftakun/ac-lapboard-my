@@ -1222,5 +1222,14 @@
     "laptime_display": "2:09.450",
     "old_ms": null,
     "old_display": null
+  },
+  {
+    "car": "Mclaren 650 GT3",
+    "track": "Road Atlanta",
+    "date": "2026-02-24",
+    "laptime_ms": 84146,
+    "laptime_display": "1:24.146",
+    "old_ms": null,
+    "old_display": null
   }
 ]
