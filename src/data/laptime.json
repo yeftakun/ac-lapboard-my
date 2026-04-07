@@ -1231,5 +1231,32 @@
     "laptime_display": "1:24.146",
     "old_ms": null,
     "old_display": null
+  },
+  {
+    "car": "Porsche 962c Longtail",
+    "track": "Lemans 2017 NO Lights",
+    "date": "2026-04-07",
+    "laptime_ms": 229579,
+    "laptime_display": "3:49.579",
+    "old_ms": null,
+    "old_display": null
+  },
+  {
+    "car": "Tatuusfa1",
+    "track": "Monza Monza F1 2022",
+    "date": "2026-04-06",
+    "laptime_ms": 127887,
+    "laptime_display": "2:07.887",
+    "old_ms": null,
+    "old_display": null
+  },
+  {
+    "car": "Lamborghini Huracan GT3",
+    "track": "SPA",
+    "date": "2026-04-08",
+    "laptime_ms": 140105,
+    "laptime_display": "2:20.105",
+    "old_ms": null,
+    "old_display": null
   }
 ]
