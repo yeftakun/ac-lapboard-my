@@ -1258,5 +1258,14 @@
     "laptime_display": "2:20.105",
     "old_ms": null,
     "old_display": null
+  },
+  {
+    "car": "BMW M V8 Hybride",
+    "track": "SPA",
+    "date": "2026-04-10",
+    "laptime_ms": 118306,
+    "laptime_display": "1:58.306",
+    "old_ms": null,
+    "old_display": null
   }
 ]
