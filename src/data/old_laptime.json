@@ -40,5 +40,12 @@
     "date": "2025-11-13",
     "laptime_ms": 424899,
     "laptime_display": "7:04.899"
+  },
+  {
+    "car": "BMW M V8 Hybride",
+    "track": "SPA",
+    "date": "2026-04-10",
+    "laptime_ms": 118306,
+    "laptime_display": "1:58.306"
   }
 ]

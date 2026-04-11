@@ -1262,10 +1262,10 @@
   {
     "car": "BMW M V8 Hybride",
     "track": "SPA",
-    "date": "2026-04-10",
-    "laptime_ms": 118306,
-    "laptime_display": "1:58.306",
-    "old_ms": null,
-    "old_display": null
+    "date": "2026-04-11",
+    "laptime_ms": 117940,
+    "laptime_display": "1:57.940",
+    "old_ms": -366,
+    "old_display": "-0.366"
   }
 ]
