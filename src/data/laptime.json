@@ -776,11 +776,11 @@
   {
     "car": "Porsche 911 GT3 R 2016",
     "track": "Nordschleife Nordschleife",
-    "date": "2025-10-21",
-    "laptime_ms": 412167,
-    "laptime_display": "6:52.167",
-    "old_ms": null,
-    "old_display": null
+    "date": "2026-04-12",
+    "laptime_ms": 408653,
+    "laptime_display": "6:48.653",
+    "old_ms": -3514,
+    "old_display": "-3.514"
   },
   {
     "car": "URD Darche 992 23",
