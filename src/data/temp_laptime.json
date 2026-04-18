@@ -992,5 +992,12 @@
     "date": "2026-04-15",
     "laptime_ms": 88378,
     "laptime_display": "1:28.378"
+  },
+  {
+    "car": "RSS Formula Hybrid 2018",
+    "track": "Imola",
+    "date": "2026-04-19",
+    "laptime_ms": 80935,
+    "laptime_display": "1:20.935"
   }
 ]
