@@ -985,5 +985,12 @@
     "date": "2026-04-11",
     "laptime_ms": 117940,
     "laptime_display": "1:57.940"
+  },
+  {
+    "car": "Ferrari 499p",
+    "track": "Imola",
+    "date": "2026-04-15",
+    "laptime_ms": 88378,
+    "laptime_display": "1:28.378"
   }
 ]
