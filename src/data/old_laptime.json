@@ -54,5 +54,12 @@
     "date": "2025-10-21",
     "laptime_ms": 412167,
     "laptime_display": "6:52.167"
+  },
+  {
+    "car": "Ferrari 488 GT3",
+    "track": "Nordschleife Nordschleife",
+    "date": "2025-07-18",
+    "laptime_ms": 427201,
+    "laptime_display": "7:07.201"
   }
 ]
