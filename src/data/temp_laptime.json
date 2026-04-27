@@ -999,5 +999,12 @@
     "date": "2026-04-19",
     "laptime_ms": 80935,
     "laptime_display": "1:20.935"
+  },
+  {
+    "car": "CF Bentley Continental GT3 2018",
+    "track": "Nordschleife Nordschleife",
+    "date": "2026-04-27",
+    "laptime_ms": 402138,
+    "laptime_display": "6:42.138"
   }
 ]
