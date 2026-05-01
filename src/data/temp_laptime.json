@@ -1006,5 +1006,26 @@
     "date": "2026-04-27",
     "laptime_ms": 402138,
     "laptime_display": "6:42.138"
+  },
+  {
+    "car": "AS Toyota Yaris GR",
+    "track": "Nordschleife Nordschleife",
+    "date": "2026-04-29",
+    "laptime_ms": 465510,
+    "laptime_display": "7:45.510"
+  },
+  {
+    "car": "Acfl Formula E Gen3",
+    "track": "Monza",
+    "date": "2026-04-30",
+    "laptime_ms": 93548,
+    "laptime_display": "1:33.548"
+  },
+  {
+    "car": "Acfl Formula E Gen3",
+    "track": "Monaco Gp22",
+    "date": "2026-04-30",
+    "laptime_ms": 88506,
+    "laptime_display": "1:28.506"
   }
 ]
