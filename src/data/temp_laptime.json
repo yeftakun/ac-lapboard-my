@@ -1027,5 +1027,19 @@
     "date": "2026-04-30",
     "laptime_ms": 88506,
     "laptime_display": "1:28.506"
+  },
+  {
+    "car": "URD Radical Sr3xxr 2023",
+    "track": "Imola",
+    "date": "2026-05-06",
+    "laptime_ms": 109801,
+    "laptime_display": "1:49.801"
+  },
+  {
+    "car": "Cslm Type R Gt500",
+    "track": "Nordschleife Nordschleife",
+    "date": "2026-05-09",
+    "laptime_ms": 364916,
+    "laptime_display": "6:04.916"
   }
 ]
