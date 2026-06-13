@@ -779,9 +779,9 @@
   {
     "car": "Porsche 919 Hybrid 2016",
     "track": "Imola",
-    "date": "2025-12-26",
-    "laptime_ms": 90085,
-    "laptime_display": "1:30.085"
+    "date": "2026-05-31",
+    "laptime_ms": 88594,
+    "laptime_display": "1:28.594"
   },
   {
     "car": "Porsche 963",
@@ -849,9 +849,9 @@
   {
     "car": "Porsche 962c Shorttail",
     "track": "Lemans 2017 NO Lights",
-    "date": "2026-01-14",
-    "laptime_ms": 230103,
-    "laptime_display": "3:50.103"
+    "date": "2026-06-13",
+    "laptime_ms": 229611,
+    "laptime_display": "3:49.611"
   },
   {
     "car": "Porsche 919 Hybrid 2016",
@@ -1041,5 +1041,82 @@
     "date": "2026-05-09",
     "laptime_ms": 364916,
     "laptime_display": "6:04.916"
+  },
+  {
+    "car": "Toyota Ae86 Tuned",
+    "track": "PK Gunma Cycle Sports Center Gcsc Full Attack",
+    "date": "2026-05-11",
+    "laptime_ms": 170939,
+    "laptime_display": "2:50.939"
+  },
+  {
+    "car": "Yumex Porsche 911 GT3 RS 992 WP MT",
+    "track": "Nordschleife Nordschleife",
+    "date": "2026-05-14",
+    "laptime_ms": 432783,
+    "laptime_display": "7:12.783"
+  },
+  {
+    "car": "Lamborghini Huracan Performante",
+    "track": "Nordschleife Nordschleife",
+    "date": "2026-05-27",
+    "laptime_ms": 426344,
+    "laptime_display": "7:06.344"
+  },
+  {
+    "car": "Porsche 919 Hybrid 2016",
+    "track": "Monza66 Full",
+    "date": "2026-05-27",
+    "laptime_ms": 121474,
+    "laptime_display": "2:01.474"
+  },
+  {
+    "car": "Lamborghini Huracan GT3",
+    "track": "RT Bathurst",
+    "date": "2026-06-06",
+    "laptime_ms": 128068,
+    "laptime_display": "2:08.068"
+  },
+  {
+    "car": "BMW M V8 Hybride",
+    "track": "Lemans 2017 NO Lights",
+    "date": "2026-06-12",
+    "laptime_ms": 220643,
+    "laptime_display": "3:40.643"
+  },
+  {
+    "car": "Mercedes AMG GT3",
+    "track": "Imola",
+    "date": "2026-06-12",
+    "laptime_ms": 107588,
+    "laptime_display": "1:47.588"
+  },
+  {
+    "car": "Alfa Romeo 155 V6",
+    "track": "Nordschleife Nordschleife",
+    "date": "2026-06-12",
+    "laptime_ms": 490407,
+    "laptime_display": "8:10.407"
+  },
+  {
+    "car": "Ferrari 499p",
+    "track": "RJ Imola 2024",
+    "date": "2026-06-12",
+    "laptime_ms": 88687,
+    "laptime_display": "1:28.687"
+  },
+  {
+    "car": "Mercedes AMG GT3",
+    "track": "RJ Imola 2024",
+    "date": "2026-06-12",
+    "laptime_ms": 106674,
+    "laptime_display": "1:46.674"
+  },
+  {
+    "car": "Cslm Type R Gt500",
+    "track": "Fuji Speedway MTS GP 2017",
+    "date": "2026-06-13",
+    "laptime_ms": 91023,
+    "laptime_display": "1:31.023"
   }
 ]

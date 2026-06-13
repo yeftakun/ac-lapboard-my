@@ -61,5 +61,19 @@
     "date": "2025-07-18",
     "laptime_ms": 427201,
     "laptime_display": "7:07.201"
+  },
+  {
+    "car": "Porsche 919 Hybrid 2016",
+    "track": "Imola",
+    "date": "2025-12-26",
+    "laptime_ms": 90085,
+    "laptime_display": "1:30.085"
+  },
+  {
+    "car": "Porsche 962c Shorttail",
+    "track": "Lemans 2017 NO Lights",
+    "date": "2026-01-14",
+    "laptime_ms": 230103,
+    "laptime_display": "3:50.103"
   }
 ]
