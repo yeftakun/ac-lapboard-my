@@ -1438,5 +1438,23 @@
     "laptime_display": "1:31.023",
     "old_ms": null,
     "old_display": null
+  },
+  {
+    "car": "Dallara Sf19",
+    "track": "Imola",
+    "date": "2026-06-13",
+    "laptime_ms": 86513,
+    "laptime_display": "1:26.513",
+    "old_ms": null,
+    "old_display": null
+  },
+  {
+    "car": "Dallara Sf19",
+    "track": "RT Suzuka Suzukagp",
+    "date": "2026-06-14",
+    "laptime_ms": 99730,
+    "laptime_display": "1:39.730",
+    "old_ms": null,
+    "old_display": null
   }
 ]
