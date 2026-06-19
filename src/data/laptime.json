@@ -1199,11 +1199,11 @@
   {
     "car": "Corvette C7R",
     "track": "Nordschleife Nordschleife",
-    "date": "2026-02-12",
-    "laptime_ms": 403351,
-    "laptime_display": "6:43.351",
-    "old_ms": null,
-    "old_display": null
+    "date": "2026-06-19",
+    "laptime_ms": 401676,
+    "laptime_display": "6:41.676",
+    "old_ms": -1675,
+    "old_display": "-1.675"
   },
   {
     "car": "Mercedes AMG GT3",
@@ -1454,6 +1454,24 @@
     "date": "2026-06-14",
     "laptime_ms": 99730,
     "laptime_display": "1:39.730",
+    "old_ms": null,
+    "old_display": null
+  },
+  {
+    "car": "Mclaren Mp412c",
+    "track": "Vallelunga Extended Circuit",
+    "date": "2026-06-15",
+    "laptime_ms": 114037,
+    "laptime_display": "1:54.037",
+    "old_ms": null,
+    "old_display": null
+  },
+  {
+    "car": "Mclaren Mp412c",
+    "track": "Nurburgring Layout GP B",
+    "date": "2026-06-15",
+    "laptime_ms": 138348,
+    "laptime_display": "2:18.348",
     "old_ms": null,
     "old_display": null
   }

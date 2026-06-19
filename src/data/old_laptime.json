@@ -75,5 +75,12 @@
     "date": "2026-01-14",
     "laptime_ms": 230103,
     "laptime_display": "3:50.103"
+  },
+  {
+    "car": "Corvette C7R",
+    "track": "Nordschleife Nordschleife",
+    "date": "2026-02-12",
+    "laptime_ms": 403351,
+    "laptime_display": "6:43.351"
   }
 ]
