@@ -1483,5 +1483,14 @@
     "laptime_display": "2:08.248",
     "old_ms": null,
     "old_display": null
+  },
+  {
+    "car": "Porsche 992 GT3 R",
+    "track": "Nordschleife Nordschleife",
+    "date": "2026-06-27",
+    "laptime_ms": 403403,
+    "laptime_display": "6:43.403",
+    "old_ms": null,
+    "old_display": null
   }
 ]
