@@ -1146,5 +1146,12 @@
     "date": "2026-06-15",
     "laptime_ms": 138348,
     "laptime_display": "2:18.348"
+  },
+  {
+    "car": "BM AMG EVO GT3 2020",
+    "track": "RT Bathurst",
+    "date": "2026-06-24",
+    "laptime_ms": 128248,
+    "laptime_display": "2:08.248"
   }
 ]
