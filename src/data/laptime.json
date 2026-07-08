@@ -1501,5 +1501,14 @@
     "laptime_display": "2:20.976",
     "old_ms": null,
     "old_display": null
+  },
+  {
+    "car": "Toyota GR GT3",
+    "track": "Nordschleife Nordschleife",
+    "date": "2026-07-08",
+    "laptime_ms": 400104,
+    "laptime_display": "6:40.104",
+    "old_ms": null,
+    "old_display": null
   }
 ]

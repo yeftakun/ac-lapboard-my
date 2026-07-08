@@ -1167,5 +1167,12 @@
     "date": "2026-06-28",
     "laptime_ms": 140976,
     "laptime_display": "2:20.976"
+  },
+  {
+    "car": "Toyota GR GT3",
+    "track": "Nordschleife Nordschleife",
+    "date": "2026-07-08",
+    "laptime_ms": 400104,
+    "laptime_display": "6:40.104"
   }
 ]
