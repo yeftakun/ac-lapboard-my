@@ -1174,5 +1174,40 @@
     "date": "2026-07-08",
     "laptime_ms": 400104,
     "laptime_display": "6:40.104"
+  },
+  {
+    "car": "Toyota Yaris GR Rally 2",
+    "track": "PK Gunma Cycle Sports Center Gcsc Full Attack",
+    "date": "2026-07-10",
+    "laptime_ms": 147969,
+    "laptime_display": "2:27.969"
+  },
+  {
+    "car": "Toyota Supra Mkiv Tuned",
+    "track": "PK Gunma Cycle Sports Center Gcsc Full Attack",
+    "date": "2026-07-11",
+    "laptime_ms": 167144,
+    "laptime_display": "2:47.144"
+  },
+  {
+    "car": "Mercedes C9",
+    "track": "G333 Goodwood Hillclimb Layout A",
+    "date": "2026-07-11",
+    "laptime_ms": 45246,
+    "laptime_display": "0:45.246"
+  },
+  {
+    "car": "Toyota Yaris GR Rally 2",
+    "track": "G333 Goodwood Hillclimb Layout A",
+    "date": "2026-07-12",
+    "laptime_ms": 51746,
+    "laptime_display": "0:51.746"
+  },
+  {
+    "car": "BMW M4 GT3",
+    "track": "RT Bathurst",
+    "date": "2026-07-12",
+    "laptime_ms": 123849,
+    "laptime_display": "2:03.849"
   }
 ]
