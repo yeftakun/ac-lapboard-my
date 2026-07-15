@@ -1555,5 +1555,23 @@
     "laptime_display": "2:03.849",
     "old_ms": null,
     "old_display": null
+  },
+  {
+    "car": "Toyota Yaris GR Rally 2",
+    "track": "Karelia",
+    "date": "2026-07-15",
+    "laptime_ms": 55911,
+    "laptime_display": "0:55.911",
+    "old_ms": null,
+    "old_display": null
+  },
+  {
+    "car": "HDT WDT Toyota Yaris WRC",
+    "track": "Karelia",
+    "date": "2026-07-15",
+    "laptime_ms": 52322,
+    "laptime_display": "0:52.322",
+    "old_ms": null,
+    "old_display": null
   }
 ]
