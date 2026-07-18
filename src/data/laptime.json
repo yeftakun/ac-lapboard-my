@@ -1190,11 +1190,11 @@
   {
     "car": "GP 2025 Fw47",
     "track": "SPA",
-    "date": "2026-02-03",
-    "laptime_ms": 103323,
-    "laptime_display": "1:43.323",
-    "old_ms": null,
-    "old_display": null
+    "date": "2026-07-18",
+    "laptime_ms": 101110,
+    "laptime_display": "1:41.110",
+    "old_ms": -2213,
+    "old_display": "-2.213"
   },
   {
     "car": "Corvette C7R",
