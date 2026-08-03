@@ -1052,9 +1052,9 @@
   {
     "car": "Yumex Porsche 911 GT3 RS 992 WP MT",
     "track": "Nordschleife Nordschleife",
-    "date": "2026-05-14",
-    "laptime_ms": 432783,
-    "laptime_display": "7:12.783"
+    "date": "2026-07-30",
+    "laptime_ms": 429707,
+    "laptime_display": "7:09.707"
   },
   {
     "car": "Lamborghini Huracan Performante",
@@ -1223,5 +1223,54 @@
     "date": "2026-07-15",
     "laptime_ms": 52322,
     "laptime_display": "0:52.322"
+  },
+  {
+    "car": "Porsche 992 GT3 R",
+    "track": "Palanga",
+    "date": "2026-07-19",
+    "laptime_ms": 70167,
+    "laptime_display": "1:10.167"
+  },
+  {
+    "car": "ACF Oreca 07",
+    "track": "RJ Imola 2024",
+    "date": "2026-07-22",
+    "laptime_ms": 95256,
+    "laptime_display": "1:35.256"
+  },
+  {
+    "car": "Audi R18 Etron Quattro",
+    "track": "RJ Imola 2024",
+    "date": "2026-07-22",
+    "laptime_ms": 92758,
+    "laptime_display": "1:32.758"
+  },
+  {
+    "car": "HDT WDT Toyota Yaris WRC",
+    "track": "Pineridgerally",
+    "date": "2026-07-29",
+    "laptime_ms": 319521,
+    "laptime_display": "5:19.521"
+  },
+  {
+    "car": "HDT WDT Toyota Yaris WRC",
+    "track": "PK Gunma Cycle Sports Center Gcsc Full Attack",
+    "date": "2026-07-30",
+    "laptime_ms": 162322,
+    "laptime_display": "2:42.322"
+  },
+  {
+    "car": "GUE Porsche 911 GT3 CUP 992",
+    "track": "Mandalika Street Circuit Main",
+    "date": "2026-08-02",
+    "laptime_ms": 95881,
+    "laptime_display": "1:35.881"
+  },
+  {
+    "car": "Acfl Formula E Gen3",
+    "track": "Jiec Ancol",
+    "date": "2026-08-03",
+    "laptime_ms": 59428,
+    "laptime_display": "0:59.428"
   }
 ]

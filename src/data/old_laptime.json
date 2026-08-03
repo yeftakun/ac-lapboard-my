@@ -96,5 +96,12 @@
     "date": "2026-02-03",
     "laptime_ms": 103323,
     "laptime_display": "1:43.323"
+  },
+  {
+    "car": "Yumex Porsche 911 GT3 RS 992 WP MT",
+    "track": "Nordschleife Nordschleife",
+    "date": "2026-05-14",
+    "laptime_ms": 432783,
+    "laptime_display": "7:12.783"
   }
 ]
