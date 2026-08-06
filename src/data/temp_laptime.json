@@ -1052,9 +1052,9 @@
   {
     "car": "Yumex Porsche 911 GT3 RS 992 WP MT",
     "track": "Nordschleife Nordschleife",
-    "date": "2026-07-30",
-    "laptime_ms": 429707,
-    "laptime_display": "7:09.707"
+    "date": "2026-08-06",
+    "laptime_ms": 427111,
+    "laptime_display": "7:07.111"
   },
   {
     "car": "Lamborghini Huracan Performante",
@@ -1272,5 +1272,12 @@
     "date": "2026-08-03",
     "laptime_ms": 59428,
     "laptime_display": "0:59.428"
+  },
+  {
+    "car": "BMW M4",
+    "track": "Vallelunga Club Circuit",
+    "date": "2026-08-05",
+    "laptime_ms": 125159,
+    "laptime_display": "2:05.159"
   }
 ]
