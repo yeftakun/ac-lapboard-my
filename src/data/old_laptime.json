@@ -103,5 +103,19 @@
     "date": "2026-07-30",
     "laptime_ms": 429707,
     "laptime_display": "7:09.707"
+  },
+  {
+    "car": "BMW M3 GT2",
+    "track": "Nordschleife Nordschleife",
+    "date": "2025-04-11",
+    "laptime_ms": 473970,
+    "laptime_display": "7:53.970"
+  },
+  {
+    "car": "Ferrari F138",
+    "track": "Imola",
+    "date": "2025-07-01",
+    "laptime_ms": 88575,
+    "laptime_display": "1:28.575"
   }
 ]

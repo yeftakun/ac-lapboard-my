@@ -371,11 +371,11 @@
   {
     "car": "BMW M3 GT2",
     "track": "Nordschleife Nordschleife",
-    "date": "2025-04-11",
-    "laptime_ms": 473970,
-    "laptime_display": "7:53.970",
-    "old_ms": null,
-    "old_display": null
+    "date": "2026-08-24",
+    "laptime_ms": 423074,
+    "laptime_display": "7:03.074",
+    "old_ms": -50896,
+    "old_display": "-50.896"
   },
   {
     "car": "Porsche 911 GT3 R 2016",
@@ -470,11 +470,11 @@
   {
     "car": "Ferrari F138",
     "track": "Imola",
-    "date": "2025-07-01",
-    "laptime_ms": 88575,
-    "laptime_display": "1:28.575",
-    "old_ms": null,
-    "old_display": null
+    "date": "2026-08-22",
+    "laptime_ms": 84066,
+    "laptime_display": "1:24.066",
+    "old_ms": -4509,
+    "old_display": "-4.509"
   },
   {
     "car": "Ferrari 488 GT3",
@@ -1643,6 +1643,96 @@
     "date": "2026-08-05",
     "laptime_ms": 125159,
     "laptime_display": "2:05.159",
+    "old_ms": null,
+    "old_display": null
+  },
+  {
+    "car": "Yumex Porsche 911 GT3 RS 992 WP MT",
+    "track": "Brands Hatch GP",
+    "date": "2026-08-06",
+    "laptime_ms": 93032,
+    "laptime_display": "1:33.032",
+    "old_ms": null,
+    "old_display": null
+  },
+  {
+    "car": "BMW M4 GT3",
+    "track": "Nordschleife Nordschleife",
+    "date": "2026-08-10",
+    "laptime_ms": 414532,
+    "laptime_display": "6:54.532",
+    "old_ms": null,
+    "old_display": null
+  },
+  {
+    "car": "VRC PT 2024 Arden CSP",
+    "track": "SPA",
+    "date": "2026-08-16",
+    "laptime_ms": 123332,
+    "laptime_display": "2:03.332",
+    "old_ms": null,
+    "old_display": null
+  },
+  {
+    "car": "VRC PT 2024 Arden CSP",
+    "track": "Imola",
+    "date": "2026-08-22",
+    "laptime_ms": 94355,
+    "laptime_display": "1:34.355",
+    "old_ms": null,
+    "old_display": null
+  },
+  {
+    "car": "Mazda MX5 CUP",
+    "track": "Imola",
+    "date": "2026-08-22",
+    "laptime_ms": 133109,
+    "laptime_display": "2:13.109",
+    "old_ms": null,
+    "old_display": null
+  },
+  {
+    "car": "VRC PT 2024 Arden CSP",
+    "track": "SPA 2022",
+    "date": "2026-09-18",
+    "laptime_ms": 120313,
+    "laptime_display": "2:00.313",
+    "old_ms": null,
+    "old_display": null
+  },
+  {
+    "car": "VRC Formula NA 2021 Road",
+    "track": "RT Macau",
+    "date": "2026-08-30",
+    "laptime_ms": 124671,
+    "laptime_display": "2:04.671",
+    "old_ms": null,
+    "old_display": null
+  },
+  {
+    "car": "GP 2025 Fw47",
+    "track": "Monza Monza F1 2022",
+    "date": "2026-09-05",
+    "laptime_ms": 80301,
+    "laptime_display": "1:20.301",
+    "old_ms": null,
+    "old_display": null
+  },
+  {
+    "car": "Mercedes AMG GT3",
+    "track": "Magione",
+    "date": "2026-09-07",
+    "laptime_ms": 77096,
+    "laptime_display": "1:17.096",
+    "old_ms": null,
+    "old_display": null
+  },
+  {
+    "car": "VRC PT 2024 Arden CSP",
+    "track": "ACU Unitedstates A",
+    "date": "2026-09-11",
+    "laptime_ms": 115369,
+    "laptime_display": "1:55.369",
     "old_ms": null,
     "old_display": null
   }
