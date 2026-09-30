@@ -1377,5 +1377,26 @@
     "date": "2026-09-26",
     "laptime_ms": 111059,
     "laptime_display": "1:51.059"
+  },
+  {
+    "car": "FSR Audi LMS EVO II GT3",
+    "track": "Road Atlanta",
+    "date": "2026-09-29",
+    "laptime_ms": 81666,
+    "laptime_display": "1:21.666"
+  },
+  {
+    "car": "FSR Audi LMS EVO II GT3",
+    "track": "JR Road Atlanta 2022 Full",
+    "date": "2026-09-29",
+    "laptime_ms": 79633,
+    "laptime_display": "1:19.633"
+  },
+  {
+    "car": "Porsche 992 GT3 R",
+    "track": "JR Road Atlanta 2022 Full",
+    "date": "2026-09-30",
+    "laptime_ms": 79515,
+    "laptime_display": "1:19.515"
   }
 ]
