@@ -117,5 +117,12 @@
     "date": "2025-07-01",
     "laptime_ms": 88575,
     "laptime_display": "1:28.575"
+  },
+  {
+    "car": "BMW M4 GT3",
+    "track": "Nordschleife Nordschleife",
+    "date": "2026-08-10",
+    "laptime_ms": 414532,
+    "laptime_display": "6:54.532"
   }
 ]

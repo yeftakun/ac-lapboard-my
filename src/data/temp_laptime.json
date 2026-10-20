@@ -1290,9 +1290,9 @@
   {
     "car": "BMW M4 GT3",
     "track": "Nordschleife Nordschleife",
-    "date": "2026-08-10",
-    "laptime_ms": 414532,
-    "laptime_display": "6:54.532"
+    "date": "2026-10-20",
+    "laptime_ms": 401268,
+    "laptime_display": "6:41.268"
   },
   {
     "car": "VRC PT 2024 Arden CSP",
@@ -1398,5 +1398,75 @@
     "date": "2026-09-30",
     "laptime_ms": 79515,
     "laptime_display": "1:19.515"
+  },
+  {
+    "car": "BM AMG EVO GT3 2020",
+    "track": "Imola",
+    "date": "2026-09-30",
+    "laptime_ms": 106702,
+    "laptime_display": "1:46.702"
+  },
+  {
+    "car": "FSR Audi LMS EVO II GT3",
+    "track": "Imola",
+    "date": "2026-09-30",
+    "laptime_ms": 105917,
+    "laptime_display": "1:45.917"
+  },
+  {
+    "car": "Porsche 992 GT3 R",
+    "track": "Imola",
+    "date": "2026-10-01",
+    "laptime_ms": 104330,
+    "laptime_display": "1:44.330"
+  },
+  {
+    "car": "Mazda MX5 CUP",
+    "track": "RJ Imola 2024",
+    "date": "2026-10-14",
+    "laptime_ms": 130771,
+    "laptime_display": "2:10.771"
+  },
+  {
+    "car": "Mazda MX5 CUP",
+    "track": "RT Bathurst",
+    "date": "2026-10-14",
+    "laptime_ms": 159010,
+    "laptime_display": "2:39.010"
+  },
+  {
+    "car": "BMW Z4 GT3",
+    "track": "RT Bathurst",
+    "date": "2026-10-14",
+    "laptime_ms": 130847,
+    "laptime_display": "2:10.847"
+  },
+  {
+    "car": "BMW M4 GT3",
+    "track": "RT Sebring Raceday",
+    "date": "2026-10-16",
+    "laptime_ms": 123986,
+    "laptime_display": "2:03.986"
+  },
+  {
+    "car": "Ferrari 330 P4",
+    "track": "Nurburgring1967 Nordschleife",
+    "date": "2026-10-16",
+    "laptime_ms": 594109,
+    "laptime_display": "9:54.109"
+  },
+  {
+    "car": "FSR Audi LMS EVO II GT3",
+    "track": "RT Bathurst",
+    "date": "2026-10-19",
+    "laptime_ms": 127772,
+    "laptime_display": "2:07.772"
+  },
+  {
+    "car": "BMW M4 GT3",
+    "track": "RJ Imola 2024",
+    "date": "2026-10-20",
+    "laptime_ms": 104122,
+    "laptime_display": "1:44.122"
   }
 ]
